@@ -1,0 +1,39 @@
+.selected-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  //   padding: 5px 10px;
+  color: $text-color1;
+
+  &--color1 {
+    background-color: $bg-color1;
+  }
+
+  &--color2 {
+    background-color: $bg-color2;
+  }
+
+  &--color3 {
+    background-color: $bg-color3;
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: 0.9em;
+    padding-right: 5px;
+  }
+
+  &__button {
+    background-color: transparent;
+    color: $text-color1;
+    border: 0;
+    cursor: pointer;
+
+    & i {
+      font-size: 20px;
+    }
+  }
+}

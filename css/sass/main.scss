@@ -1,4 +1,8 @@
 @import "./utils/variables";
 @import "./utils/visibility";
+@import "./base/global";
+@import "./base/typography";
 @import "./components/logo";
 @import "./components/search-bar";
+@import "./components/selector";
+@import "./components/selected-tag";

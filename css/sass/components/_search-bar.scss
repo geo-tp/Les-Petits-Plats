@@ -1,2 +1,24 @@
 .search-bar {
+  position: relative;
+  &__input {
+    width: 100%;
+    margin: 0;
+    padding: 24px 0px;
+    padding-left: 20px;
+    background-color: $bg-color5;
+    border: 0;
+  }
+
+  &__button {
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    background-color: $bg-color5;
+    cursor: pointer;
+  }
 }

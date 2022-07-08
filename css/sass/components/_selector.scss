@@ -1,0 +1,35 @@
+.selector {
+  box-sizing: border-box;
+  width: 170px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  border-radius: 5px;
+
+  &__input {
+    border: 0;
+    font-size: 1.1em;
+    font-weight: 700;
+    background-color: transparent;
+    color: $text-color1;
+  }
+
+  &__icon {
+    color: $text-color1;
+    font-size: 20px;
+  }
+
+  &--color1 {
+    background-color: $bg-color1;
+  }
+
+  &--color2 {
+    background-color: $bg-color2;
+  }
+
+  &--color3 {
+    background-color: $bg-color3;
+  }
+}
