@@ -49,10 +49,119 @@
             <i class="fa fa-times-circle-o"></i>
           </button>
         </div>
-        <div class="selector selector--color1">
-          <input class="selector__input" type="button" value="Ingrédient" />
-          <i class="selector__icon fa fa-angle-down"></i>
+
+        <div class="selectors">
+          <div
+            class="selector selector--is-open background--color1"
+            is-open="true"
+          >
+            <div class="selector__search">
+              <input
+                class="selector__search__input"
+                type="text"
+                value=""
+                placeholder="Rechercher un ingredient"
+              />
+              <i class="selector__search__icon fa fa-angle-down"></i>
+            </div>
+            <ul class="selector__ingredients background--color1">
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+              <li class="selector__ingredients__item">Bol</li>
+            </ul>
+          </div>
+
+          <div class="selector background--color2" is-open="false">
+            <div class="selector__search">
+              <input
+                class="selector__search__input"
+                type="button"
+                value="Appareils"
+              />
+              <i class="selector__search__icon fa fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="selector background--color3" is-open="false">
+            <div class="selector__search">
+              <input
+                class="selector__search__input"
+                type="button"
+                value="Ustensils"
+              />
+              <i class="selector__search__icon fa fa-angle-down"></i>
+            </div>
         </div>
+      </section>
+      <section class="recipes">
+        <article class="recipe-card">
+          <div class="recipe-card__picture"></div>
+          <div class="recipe-card__content">
+            <div class="recipe-card__content__header">
+              <h2 class="recipe-card__content__header__title">Frangipane</h2>
+              <p class="recipe-card__content__header__time">
+                <i class="far fa-clock"></i>
+                60 min
+              </p>
+            </div>
+            <div class="recipe-card__content__body">
+              <div class="recipe-card__content__body__ingredients">
+                <div class="ingredient-item">
+                  <span class="ingredient-item__name">Pate feuilleté</span>
+                  <span class="ingredient-item__quantity"> 600 grammes</span>
+                </div>
+                <div class="ingredient-item">
+                  <span class="ingredient-item__name">Pate feuilleté</span>
+                  <span class="ingredient-item__quantity"> 600 grammes</span>
+                </div>
+                <div class="ingredient-item">
+                  <span class="ingredient-item__name">Pate feuilleté</span>
+                  <span class="ingredient-item__quantity"> 600 grammes</span>
+                </div>
+                <div class="ingredient-item">
+                  <span class="ingredient-item__name">Pate feuilleté</span>
+                  <span class="ingredient-item__quantity"> 600 grammes</span>
+                </div>
+                <div class="ingredient-item">
+                  <span class="ingredient-item__name">Pate feuilleté</span>
+                  <span class="ingredient-item__quantity"> 600 grammes</span>
+                </div>
+              </div>
+              <p class="recipe-card__content__body__instruction">
+                Préparez la frangipane : mélangez le sucre la poudre d'amandes,
+                le beurre et les œufs. Étalez la moitié de la pâte feuilleté et
+                mettre dans un moule à tarte. Garnir de frangipane et recouvrir
+                du reste de pâte feuilletée. Mettre au four 30 minutes
+              </p>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
   </body>

@@ -1,35 +1,55 @@
 .selector {
-  box-sizing: border-box;
-  width: 170px;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px;
-  border-radius: 5px;
+  margin: 20px 0px;
+  margin-right: 20px;
+  flex-basis: 12%;
+  position: relative;
 
-  &__input {
-    border: 0;
+  &__search {
+    height: 70px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__input {
+      border: 0;
+      font-size: 1.1em;
+      font-weight: 700;
+      background-color: transparent;
+      color: $text-color1;
+    }
+
+    &__icon {
+      color: $text-color1;
+      font-size: 20px;
+    }
+  }
+
+  &__ingredients {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    height: 330px;
+    // display: grid;
+    // grid-template-rows: repeat(6, auto);
+    // grid-gap: 10px 50px;
+    // grid-auto-flow: column;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 0;
+    color: $text-color1;
+    list-style: none;
     font-size: 1.1em;
-    font-weight: 700;
-    background-color: transparent;
-    color: $text-color1;
+    padding-left: 20px;
+    &__item {
+      padding: 5px 0px;
+    }
   }
 
-  &__icon {
-    color: $text-color1;
-    font-size: 20px;
-  }
-
-  &--color1 {
-    background-color: $bg-color1;
-  }
-
-  &--color2 {
-    background-color: $bg-color2;
-  }
-
-  &--color3 {
-    background-color: $bg-color3;
+  &--is-open {
+    flex-basis: 60%;
   }
 }

@@ -1,8 +1,14 @@
 @import "./utils/variables";
 @import "./utils/visibility";
 @import "./base/global";
+@import "./base/background";
 @import "./base/typography";
 @import "./components/logo";
 @import "./components/search-bar";
 @import "./components/selector";
 @import "./components/selected-tag";
+@import "./components/ingredient-item";
+@import "./components/recipe-card";
+@import "./layouts/search";
+@import "./layouts/recipes";
+@import "./layouts/selectors";
