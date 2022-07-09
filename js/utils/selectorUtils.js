@@ -1,38 +1,54 @@
-function getIngredientsFromRecipes() {
+function getIngredientsFromRecipes(limit = 30) {
   let ingredients = [];
-  recipes.map((recipe) => {
-    console.log(recipe);
-    recipe.ingredients.map((ingredient) => {
-      if (!ingredients.includes(ingredient)) {
+
+  for (let recipe of recipes) {
+    for (let ingredient of recipe.ingredients) {
+      let ing = ingredient.ingredient.toLowerCase();
+      if (!ingredients.includes(ing)) {
         // ingredient is an object with quantity
-        ingredients.push(ingredient.ingredient);
+        ingredients.push(ing);
+
+        if (ingredients.length == limit) {
+          return ingredients;
+        }
       }
-    });
-  });
+    }
+  }
 
   return ingredients;
 }
 
-function getUstensilsFromRecipes() {
+function getUstensilsFromRecipes(limit = 30) {
   let ustensils = [];
-  recipes.map((recipe) => {
-    recipe.ustensils.map((ustensil) => {
+
+  for (let recipe of recipes) {
+    for (let ustensil of recipe.ustensils) {
       if (!ustensils.includes(ustensil)) {
+        // ingredient is an object with quantity
         ustensils.push(ustensil);
+
+        if (ustensils.length == limit) {
+          return ustensils;
+        }
       }
-    });
-  });
+    }
+  }
 
   return ustensils;
 }
 
-function getAppliancesFromRecipes() {
+function getAppliancesFromRecipes(limit = 30) {
   let appliances = [];
-  recipes.map((recipe) => {
-    if (!appliances.includes(recipe.appliance)) {
-      appliances.push(recipe.appliance);
+
+  for (let recipe of recipes) {
+    if (!appliances.includes(recipe.appliance.toLowerCase())) {
+      appliances.push(recipe.appliance.toLowerCase());
+
+      if (appliances.length == limit) {
+        return appliances;
+      }
     }
-  });
+  }
 
   return appliances;
 }

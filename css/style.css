@@ -90,7 +90,7 @@ body {
   color: white;
   font-size: 20px;
 }
-.selector__ingredients {
+.selector__elements {
   display: flex;
   box-sizing: border-box;
   width: 100%;
@@ -104,8 +104,9 @@ body {
   font-size: 1.1em;
   padding-left: 20px;
 }
-.selector__ingredients__item {
+.selector__elements__item {
   padding: 5px 0px;
+  text-transform: capitalize;
 }
 .selector--is-open {
   flex-basis: 60%;

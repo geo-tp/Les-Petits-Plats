@@ -52,6 +52,7 @@
 
         <div class="selectors">
           <div
+            id="ingredients-selector"
             class="selector selector--is-open background--color1"
             is-open="true"
           >
@@ -64,41 +65,13 @@
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
-            <ul class="selector__ingredients background--color1">
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
-              <li class="selector__ingredients__item">Bol</li>
+            <ul class="selector__elements background--color1">
+              <li class="selector__elements__item">Bol</li>
+              <li class="selector__elements__item">Bol</li>
             </ul>
           </div>
 
-          <div class="selector background--color2" is-open="false">
+          <div class="selector background--color2" id="appliances-selector">
             <div class="selector__search">
               <input
                 class="selector__search__input"
@@ -108,7 +81,7 @@
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
           </div>
-          <div class="selector background--color3" is-open="false">
+          <div class="selector background--color3" id="ustensils-selector">
             <div class="selector__search">
               <input
                 class="selector__search__input"
@@ -117,6 +90,7 @@
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
+          </div>
         </div>
       </section>
       <section class="recipes">
@@ -165,5 +139,9 @@
       </section>
     </main>
     <script src="./js/data/recipes.js"></script>
+    <script src="./js/utils/selectorUtils.js"></script>
+    <script src="./js/factories/selectorFactory.js"></script>
+    <script src="./js/components/ingredientSelector.js"></script>
+    <script src="./js/pages/index.js"></script>
   </body>
 </html>

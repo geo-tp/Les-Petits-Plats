@@ -1,1 +1,5 @@
-function init() {}
+function init() {
+  initIngredientSelector();
+}
+
+init();
