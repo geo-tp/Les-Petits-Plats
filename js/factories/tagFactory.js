@@ -1,14 +1,14 @@
 // Create an element selector (example: Ingredient)
-function selectorFactory(data) {
-  const { name, colorId } = data;
+function tagFactory(data) {
+  const { name, typeId } = data;
 
   function getTagDOM() {
     const tagDOM = document.createElement("div");
-    tagDOM.classList.add("selected-tag", `selected-tag--color${colorId}`);
+    tagDOM.classList.add("selected-tag", `selected-tag--color${typeId}`);
 
     const content = `
         <label class="selected-tag__label">${name}</label>
-        <button class="selected-tag__button" aria-label="Supprimer le filtre">
+        <button class="selected-tag__button" onclick="removeElementTag()" aria-label="Supprimer le filtre">
         <i class="fa fa-times-circle-o"></i>
         </button>
     `;

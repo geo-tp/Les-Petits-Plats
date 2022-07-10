@@ -1,6 +1,6 @@
 // Create an element selector (example: Ingredient)
 function selectorFactory(data) {
-  const { name, placeholder, elements, colorId, onclickEvent } = data;
+  const { name, placeholder, elements, typeId, onclickEvent } = data;
 
   function getSelectorDOM() {
     const selectorSearch = `
@@ -18,7 +18,7 @@ function selectorFactory(data) {
     const selectorElements = document.createElement("ul");
     selectorElements.classList.add(
       `selector__elements`,
-      `background--color${colorId}`,
+      `background--color${typeId}`,
       "visibility--hidden"
     );
     selectorElements.id = "ingredients-list";
@@ -27,11 +27,12 @@ function selectorFactory(data) {
       let li = document.createElement("li");
       li.classList.add("selector__elements__item");
       li.textContent = element;
+      li.onclick = () => addElementTag(element, typeId);
       selectorElements.appendChild(li);
     }
 
     const selectorDOM = document.createElement("div");
-    selectorDOM.classList.add("selector", `background--color${colorId}`);
+    selectorDOM.classList.add("selector", `background--color${typeId}`);
     selectorDOM.onclick = () => onclickEvent();
     selectorDOM.id = `${name.toLowerCase()}-selector`;
     selectorDOM.innerHTML = selectorSearch;
@@ -43,7 +44,7 @@ function selectorFactory(data) {
     name,
     placeholder,
     elements,
-    colorId,
+    typeId,
     onclickEvent,
     getSelectorDOM,
   };

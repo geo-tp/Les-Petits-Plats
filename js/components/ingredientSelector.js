@@ -9,7 +9,7 @@ function initIngredientSelector() {
     name,
     placeholder,
     elements: ingredients,
-    colorId: 1,
+    typeId: 1,
     onclickEvent: displayIngredientList,
   });
   const ingredientSelectorDOM = ingredientSelectorModel.getSelectorDOM();
@@ -28,7 +28,7 @@ function displayIngredientList() {
   ingredientInput.type = "text";
   ingredientInput.setAttribute("value", "");
   ingredientInput.focus();
-  ingredientInput.addEventListener("focusout", closeIngredientList);
+  // ingredientInput.addEventListener("focusout", closeIngredientList);
   ingredientList.classList.remove("visibility--hidden");
   ingredientSelector.style.flexBasis = "60%";
 }

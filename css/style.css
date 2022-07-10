@@ -117,7 +117,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 110px;
+  flex-basis: 10%;
   height: 35px;
   border-radius: 5px;
   color: white;
@@ -209,6 +209,11 @@ body {
 
 .selectors {
   display: flex;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=style.css.map */
