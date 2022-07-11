@@ -94,16 +94,21 @@
           <div class="selector background--color3" id="ustensils-selector">
             <div class="selector__search">
               <input
+                id="ustensils-input"
                 class="selector__search__input"
                 type="button"
                 value="Ustensils"
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
+            <ul
+              class="selector__elements background--color2"
+              id="ustensils-list"
+            ></ul>
           </div>
         </div>
       </section>
-      <section class="recipes">
+      <section class="recipes" id="recipes">
         <article class="recipe-card">
           <div class="recipe-card__picture"></div>
           <div class="recipe-card__content">
@@ -149,12 +154,16 @@
       </section>
     </main>
     <script src="./js/data/recipes.js"></script>
+    <script src="./js/data/api.js"></script>
     <script src="./js/utils/selectorUtils.js"></script>
     <script src="./js/factories/selectorFactory.js"></script>
     <script src="./js/factories/tagFactory.js"></script>
+    <script src="./js/factories/recipeFactory.js"></script>
     <script src="./js/components/ingredientSelector.js"></script>
     <script src="./js/components/applianceSelector.js"></script>
-    <script src="./js/components/elementTag.js"></script>
+    <script src="./js/components/ustensilSelector.js"></script>
+    <script src="./js/components/elementTags.js"></script>
+    <script src="./js/components/recipeCards.js"></script>
     <script src="./js/pages/index.js"></script>
   </body>
 </html>

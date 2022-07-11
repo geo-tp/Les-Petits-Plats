@@ -4,8 +4,10 @@ function addElementTag(tag, type) {
   let tagModel = null;
   let tagDOM = null;
 
-  if (activeTags.includes(tag)) {
-    return;
+  for (let i = 0; i < activeTags.length; i++) {
+    if (activeTags[i].name == tag) {
+      return;
+    }
   }
 
   switch (type) {

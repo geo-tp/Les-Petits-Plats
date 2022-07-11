@@ -108,6 +108,7 @@ body {
 .selector__elements__item {
   padding: 5px 0px;
   text-transform: capitalize;
+  cursor: pointer;
 }
 .selector--is-open {
   flex-basis: 60%;

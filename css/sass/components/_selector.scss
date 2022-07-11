@@ -45,9 +45,11 @@
     list-style: none;
     font-size: 1.1em;
     padding-left: 20px;
+
     &__item {
       padding: 5px 0px;
       text-transform: capitalize;
+      cursor: pointer;
     }
   }
 
