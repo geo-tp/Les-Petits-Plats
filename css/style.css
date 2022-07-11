@@ -86,6 +86,8 @@ body {
   font-weight: 700;
   background-color: transparent;
   color: white;
+  height: 100%;
+  width: 100%;
 }
 .selector__search__icon {
   color: white;

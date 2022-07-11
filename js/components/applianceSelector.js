@@ -34,9 +34,9 @@ function displayApplianceList() {
 }
 
 function closeApplianceList() {
-  const applianceList = document.getElementById("appliances-list");
-  const applianceInput = document.getElementById("appliances-input");
-  const applianceSelector = document.getElementById("appliances-selector");
+  const applianceList = document.getElementById("appareils-list");
+  const applianceInput = document.getElementById("appareils-input");
+  const applianceSelector = document.getElementById("appareils-selector");
 
   applianceInput.type = "button";
   applianceInput.setAttribute("value", "Appareils");

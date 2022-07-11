@@ -3,6 +3,7 @@ function init() {
   initApplianceSelector();
   initUstensilSelector();
   displayRecipes();
+  selectorsCloseEvent();
 }
 
 init();
