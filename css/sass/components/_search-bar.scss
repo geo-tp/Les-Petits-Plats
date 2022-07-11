@@ -1,8 +1,8 @@
 .search-bar {
   position: relative;
   &__input {
-    width: 100%;
-    margin: 0;
+    width: calc(100% - 20px);
+    margin: 0 auto;
     padding: 24px 0px;
     padding-left: 20px;
     background-color: $bg-color5;
@@ -12,7 +12,7 @@
   &__button {
     padding: 20px;
     position: absolute;
-    right: 0;
+    right: 2%;
     top: 0;
     border: 0;
     font-size: 28px;

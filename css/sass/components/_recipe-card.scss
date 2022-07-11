@@ -1,13 +1,15 @@
 .recipe-card {
-  flex-basis: 33%;
   box-sizing: border-box;
-
+  margin: 20px;
+  flex-basis: 30%;
+  box-sizing: border-box;
   &__picture {
     height: 190px;
     background-color: $bg-color4;
   }
 
   &__content {
+    height: 200px;
     display: flex;
     flex-direction: column;
     background-color: $bg-color5;
@@ -37,6 +39,8 @@
       flex-basis: 60%;
       padding: 20px;
       padding-top: 0;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
 
       &__ingredients {
         flex-basis: 50%;
@@ -46,7 +50,19 @@
         margin: 0;
         flex-basis: 50%;
         font-size: 0.7em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // margin-bottom: 10px;
+        height: 110px;
       }
     }
+  }
+
+  @include tablet-design {
+    flex-basis: 45%;
+  }
+
+  @include mobile-design {
+    flex-basis: 90%;
   }
 }

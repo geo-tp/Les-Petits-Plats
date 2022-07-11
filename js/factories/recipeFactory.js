@@ -39,7 +39,9 @@ function recipeFactory(data) {
       item.classList.add("ingredient-item");
       item.innerHTML = `
             <span class="ingredient-item__name">${ingredient.ingredient}</span>
-            <span class="ingredient-item__quantity"> ${ingredient.quantity} ${ingredient.unit}</span>
+            <span class="ingredient-item__quantity"> ${
+              ingredient.quantity ? ingredient.quantity : ""
+            } ${ingredient.unit ? ingredient.unit : ""}</span>
         `;
       recipeIngredients.appendChild(item);
     }
