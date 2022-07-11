@@ -4,7 +4,7 @@ function tagFactory(data) {
 
   function getTagDOM() {
     const tagDOM = document.createElement("div");
-    tagDOM.classList.add("selected-tag", `selected-tag--color${typeId}`);
+    tagDOM.classList.add("selected-tag", `background--color${typeId}`);
 
     const content = `
         <label class="selected-tag__label">${name}</label>

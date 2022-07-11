@@ -21,7 +21,7 @@ function selectorFactory(data) {
       `background--color${typeId}`,
       "visibility--hidden"
     );
-    selectorElements.id = "ingredients-list";
+    selectorElements.id = `${name.toLowerCase()}-list`;
 
     for (let element of elements) {
       let li = document.createElement("li");

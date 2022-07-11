@@ -70,21 +70,26 @@
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
-            <ul class="selector__elements background--color1">
-              <li class="selector__elements__item">Bol</li>
-              <li class="selector__elements__item">Bol</li>
-            </ul>
+            <ul
+              class="selector__elements background--color1"
+              id="ingredients-list"
+            ></ul>
           </div>
 
-          <div class="selector background--color2" id="appliances-selector">
+          <div class="selector background--color2" id="appareils-selector">
             <div class="selector__search">
               <input
+                id="appareils-input"
                 class="selector__search__input"
                 type="button"
                 value="Appareils"
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
+            <ul
+              class="selector__elements background--color2"
+              id="appareils-list"
+            ></ul>
           </div>
           <div class="selector background--color3" id="ustensils-selector">
             <div class="selector__search">
@@ -148,6 +153,7 @@
     <script src="./js/factories/selectorFactory.js"></script>
     <script src="./js/factories/tagFactory.js"></script>
     <script src="./js/components/ingredientSelector.js"></script>
+    <script src="./js/components/applianceSelector.js"></script>
     <script src="./js/components/elementTag.js"></script>
     <script src="./js/pages/index.js"></script>
   </body>

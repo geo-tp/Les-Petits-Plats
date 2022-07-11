@@ -10,22 +10,15 @@
   margin-top: 20px;
   margin-right: 20px;
 
-  &--color1 {
-    background-color: $bg-color1;
-  }
-
-  &--color2 {
-    background-color: $bg-color2;
-  }
-
-  &--color3 {
-    background-color: $bg-color3;
-  }
-
   &__label {
+    margin-left: 5px;
     font-weight: 700;
     font-size: 0.9em;
     padding-right: 5px;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   &__button {
