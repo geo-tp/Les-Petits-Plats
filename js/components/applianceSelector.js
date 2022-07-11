@@ -39,7 +39,7 @@ function closeApplianceList() {
   const applianceSelector = document.getElementById("appliances-selector");
 
   applianceInput.type = "button";
-  applianceInput.setAttribute("value", "Ingrédients");
+  applianceInput.setAttribute("value", "Appareils");
   applianceList.classList.add("visibility--hidden");
   applianceSelector.style.flexBasis = "12%";
 }

@@ -1,7 +1,13 @@
+let activeTags = [];
+
 function addElementTag(tag, type) {
   let tagModel = null;
   let tagDOM = null;
-  console.log(tag, type);
+
+  if (activeTags.includes(tag)) {
+    return;
+  }
+
   switch (type) {
     case 1:
       tagModel = tagFactory({ name: tag, typeId: 1 });
@@ -16,9 +22,34 @@ function addElementTag(tag, type) {
       tagDOM = tagModel.getTagDOM();
       break;
   }
-  console.log(tagDOM);
   if (tagDOM) {
     const tags = document.querySelector(".tags");
     tags.appendChild(tagDOM);
+    activeTags.push({ name: tag, type });
+  }
+}
+
+function removeElementTag(tagName) {
+  let index = null;
+
+  for (let i = 0; i < activeTags.length; i++) {
+    console.log(activeTags[i].name);
+    if (activeTags[i].name == tagName) {
+      index = i;
+      break;
+    }
+  }
+
+  if (index != null) {
+    activeTags.splice(index, 1);
+    const tagsDOM = document.querySelectorAll(".selected-tag");
+
+    for (let tagDOM of tagsDOM) {
+      console.log(tagDOM.textContent, tagName);
+      if (tagDOM.id == `${tagName}-tag`) {
+        tagDOM.remove();
+        return;
+      }
+    }
   }
 }
