@@ -1,3 +1,25 @@
+function displaySelectorList(
+  elementListDOM,
+  elementInputDOM,
+  elementSelectorDOM
+) {
+  elementInputDOM.type = "text";
+  elementInputDOM.setAttribute("value", "");
+  elementInputDOM.focus();
+  elementListDOM.classList.remove("visibility--hidden");
+  elementSelectorDOM.style.flexBasis = "60%";
+}
+
+function closeSelectorList(
+  elementListDOM,
+  elementInputDOM,
+  elementSelectorDOM
+) {
+  elementInputDOM.type = "button";
+  elementListDOM.classList.add("visibility--hidden");
+  elementSelectorDOM.style.flexBasis = "12%";
+}
+
 function selectorsCloseEvent() {
   const body = document.querySelector("body");
   const ingredientInput = document.getElementById("ingredients-input");
@@ -26,7 +48,5 @@ function selectorsCloseEvent() {
         closeUstensilList();
         closeIngredientList();
     }
-
-    console.log("CLICKED");
   };
 }

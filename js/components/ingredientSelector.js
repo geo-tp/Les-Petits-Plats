@@ -1,5 +1,4 @@
 function initIngredientSelector() {
-  console.log("init");
   const ingredientSelector = document.getElementById("ingredients-selector");
   const name = "Ingredients";
   const placeholder = "Rechercher un ingrédient";
@@ -25,12 +24,7 @@ function displayIngredientList() {
   const ingredientInput = document.getElementById("ingredients-input");
   const ingredientSelector = document.getElementById("ingredients-selector");
 
-  ingredientInput.type = "text";
-  ingredientInput.setAttribute("value", "");
-  ingredientInput.focus();
-  // ingredientInput.addEventListener("focusout", closeIngredientList);
-  ingredientList.classList.remove("visibility--hidden");
-  ingredientSelector.style.flexBasis = "60%";
+  displaySelectorList(ingredientList, ingredientInput, ingredientSelector);
 }
 
 function closeIngredientList() {
@@ -38,8 +32,5 @@ function closeIngredientList() {
   const ingredientInput = document.getElementById("ingredients-input");
   const ingredientSelector = document.getElementById("ingredients-selector");
 
-  ingredientInput.type = "button";
-  ingredientInput.setAttribute("value", "Ingrédients");
-  ingredientList.classList.add("visibility--hidden");
-  ingredientSelector.style.flexBasis = "12%";
+  closeSelectorList(ingredientList, ingredientInput, ingredientSelector);
 }

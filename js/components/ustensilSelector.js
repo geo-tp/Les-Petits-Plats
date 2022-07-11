@@ -1,5 +1,4 @@
 function initUstensilSelector() {
-  console.log("init");
   const ustensilSelector = document.getElementById("ustensils-selector");
   const name = "Ustensils";
   const placeholder = "Rechercher un ustensil";
@@ -25,12 +24,7 @@ function displayUstensilList() {
   const ustensilInput = document.getElementById("ustensils-input");
   const ustensilSelector = document.getElementById("ustensils-selector");
 
-  ustensilInput.type = "text";
-  ustensilInput.setAttribute("value", "");
-  ustensilInput.focus();
-  // ustensilInput.addEventListener("focusout", closeUstensilList);
-  ustensilList.classList.remove("visibility--hidden");
-  ustensilSelector.style.flexBasis = "60%";
+  displaySelectorList(ustensilList, ustensilInput, ustensilSelector);
 }
 
 function closeUstensilList() {
@@ -38,8 +32,5 @@ function closeUstensilList() {
   const ustensilInput = document.getElementById("ustensils-input");
   const ustensilSelector = document.getElementById("ustensils-selector");
 
-  ustensilInput.type = "button";
-  ustensilInput.setAttribute("value", "Ustensils");
-  ustensilList.classList.add("visibility--hidden");
-  ustensilSelector.style.flexBasis = "12%";
+  closeSelectorList(ustensilList, ustensilInput, ustensilSelector);
 }
