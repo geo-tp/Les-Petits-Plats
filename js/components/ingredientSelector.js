@@ -19,15 +19,21 @@ function initIngredientSelector() {
   );
 }
 
-function updateIngredientList() {
+function filterIngredientList() {
   const ingredientList = document.getElementById("ingredients-list");
   const ingredientInput = document.getElementById("ingredients-input");
   const ingredientSelector = document.getElementById("ingredients-selector");
 
-  const filteredIngredients = getIngredientsByKeywords(ingredientInput.value);
+  let newIngredientsList = null;
 
-  updateSelectorList(ingredientList, 1, filteredIngredients);
-  resizeSelector(ingredientSelector, ingredientList, filteredIngredients);
+  if (ingredientInput.value == "") {
+    newIngredientsList = getIngredientsFromRecipes(30);
+  } else {
+    newIngredientsList = getIngredientsByKeywords(ingredientInput.value);
+  }
+
+  filterSelectorList(ingredientList, 1, newIngredientsList);
+  resizeSelector(ingredientSelector, ingredientList, newIngredientsList);
 }
 
 function displayIngredientList() {
@@ -35,7 +41,7 @@ function displayIngredientList() {
   const ingredientInput = document.getElementById("ingredients-input");
   const ingredientSelector = document.getElementById("ingredients-selector");
 
-  ingredientInput.oninput = () => updateIngredientList();
+  ingredientInput.oninput = () => filterIngredientList();
 
   displaySelectorList(ingredientList, ingredientInput, ingredientSelector);
 }

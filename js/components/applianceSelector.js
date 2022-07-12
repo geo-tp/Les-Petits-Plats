@@ -20,17 +20,21 @@ function initApplianceSelector() {
   );
 }
 
-function updateApplianceList() {
-  console.log("APPIANCE LIST");
+function filterApplianceList() {
   const applianceList = document.getElementById("appareils-list");
   const applianceInput = document.getElementById("appareils-input");
   const applianceSelector = document.getElementById("appareils-selector");
 
-  const filteredAppliances = getAppliancesByKeywords(applianceInput.value);
+  let newAppliancesList = null;
 
-  console.log("HERE", filteredAppliances);
-  updateSelectorList(applianceList, 2, filteredAppliances);
-  resizeSelector(applianceSelector, applianceList, filteredAppliances);
+  if (applianceInput.value == "") {
+    newAppliancesList = getAppliancesFromRecipes(30);
+  } else {
+    newAppliancesList = getAppliancesByKeywords(applianceInput.value);
+  }
+
+  filterSelectorList(applianceList, 2, newAppliancesList);
+  resizeSelector(applianceSelector, applianceList, newAppliancesList);
 }
 
 function displayApplianceList() {
@@ -38,7 +42,7 @@ function displayApplianceList() {
   const applianceInput = document.getElementById("appareils-input");
   const applianceSelector = document.getElementById("appareils-selector");
 
-  applianceInput.oninput = () => updateApplianceList();
+  applianceInput.oninput = () => filterApplianceList();
 
   displaySelectorList(applianceList, applianceInput, applianceSelector);
 }
@@ -47,7 +51,7 @@ function closeApplianceList() {
   const applianceList = document.getElementById("appareils-list");
   const applianceInput = document.getElementById("appareils-input");
   const applianceSelector = document.getElementById("appareils-selector");
-  applianceInput.setAttribute("value", "Appareils");
+  applianceInput.value = "Appareils";
 
   closeSelectorList(applianceList, applianceInput, applianceSelector);
 }

@@ -3,6 +3,7 @@ let activeTags = [];
 function addElementTag(tag, type) {
   let tagModel = null;
   let tagDOM = null;
+  console.log(activeTags);
 
   for (let i = 0; i < activeTags.length; i++) {
     if (activeTags[i].name == tag) {

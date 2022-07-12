@@ -19,15 +19,21 @@ function initUstensilSelector() {
   );
 }
 
-function updateUstensilList() {
+function filterUstensilList() {
   const ustensilList = document.getElementById("ustensils-list");
   const ustensilInput = document.getElementById("ustensils-input");
   const ustensilSelector = document.getElementById("ustensils-selector");
 
-  const filteredUstensils = getUstensilsByKeywords(ustensilInput.value);
+  let newUstensilsList = null;
 
-  updateSelectorList(ustensilList, 3, filteredUstensils);
-  resizeSelector(ustensilSelector, ustensilList, filteredUstensils);
+  if (ustensilInput.value == "") {
+    newUstensilsList = getUstensilsFromRecipes(30);
+  } else {
+    newUstensilsList = getUstensilsByKeywords(ustensilInput.value);
+  }
+
+  filterSelectorList(ustensilList, 3, newUstensilsList);
+  resizeSelector(ustensilSelector, ustensilList, newUstensilsList);
 }
 
 function displayUstensilList() {
@@ -35,7 +41,7 @@ function displayUstensilList() {
   const ustensilInput = document.getElementById("ustensils-input");
   const ustensilSelector = document.getElementById("ustensils-selector");
 
-  ustensilInput.oninput = () => updateUstensilList();
+  ustensilInput.oninput = () => filterUstensilList();
 
   displaySelectorList(ustensilList, ustensilInput, ustensilSelector);
 }

@@ -4,13 +4,13 @@ function displaySelectorList(
   elementSelectorDOM
 ) {
   elementInputDOM.type = "text";
-  elementInputDOM.setAttribute("value", "");
+  elementInputDOM.value = "";
   elementInputDOM.focus();
   elementListDOM.classList.remove("visibility--hidden");
   elementSelectorDOM.style.flexBasis = "60%";
 }
 
-function updateSelectorList(elementListDOM, typeId, data) {
+function filterSelectorList(elementListDOM, typeId, data) {
   elementListDOM.innerHTML = "";
 
   for (let element of data) {
