@@ -24,10 +24,13 @@ function updateApplianceList() {
   console.log("APPIANCE LIST");
   const applianceList = document.getElementById("appareils-list");
   const applianceInput = document.getElementById("appareils-input");
+  const applianceSelector = document.getElementById("appareils-selector");
 
   const filteredAppliances = getAppliancesByKeywords(applianceInput.value);
 
-  updateSelectorList(applianceList, filteredAppliances);
+  console.log("HERE", filteredAppliances);
+  updateSelectorList(applianceList, 2, filteredAppliances);
+  resizeSelector(applianceSelector, applianceList, filteredAppliances);
 }
 
 function displayApplianceList() {

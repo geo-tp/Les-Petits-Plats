@@ -19,10 +19,23 @@ function initUstensilSelector() {
   );
 }
 
+function updateUstensilList() {
+  const ustensilList = document.getElementById("ustensils-list");
+  const ustensilInput = document.getElementById("ustensils-input");
+  const ustensilSelector = document.getElementById("ustensils-selector");
+
+  const filteredUstensils = getUstensilsByKeywords(ustensilInput.value);
+
+  updateSelectorList(ustensilList, 3, filteredUstensils);
+  resizeSelector(ustensilSelector, ustensilList, filteredUstensils);
+}
+
 function displayUstensilList() {
   const ustensilList = document.getElementById("ustensils-list");
   const ustensilInput = document.getElementById("ustensils-input");
   const ustensilSelector = document.getElementById("ustensils-selector");
+
+  ustensilInput.oninput = () => updateUstensilList();
 
   displaySelectorList(ustensilList, ustensilInput, ustensilSelector);
 }

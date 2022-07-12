@@ -64,36 +64,17 @@ function getRecipesByKeywords(keywords) {}
 function getIngredientsByKeywords(keywords) {
   let ingredients = getIngredientsFromRecipes();
 
-  ingredientsFormatted = replaceAccents(removeIneficientWords(keywords));
-
-  let ingredientsResults = [];
-
-  for (let ingredient of ingredients) {
-    if (replaceAccents(ingredient).include(keywords)) {
-      ingredientsResults.push(ingredient);
-    }
-  }
-
-  return ingredientsResults;
+  return searchElementsByKeywords(keywords, ingredients);
 }
 
 function getAppliancesByKeywords(keywords) {
   let appliances = getAppliancesFromRecipes();
 
-  appliancesFormatted = replaceAccents(removeIneficientWords(keywords));
-
-  let appliancesResults = [];
-
-  for (let appliance of appliances) {
-    console.log(replaceAccents(appliance).includes(keywords));
-    if (replaceAccents(appliance).includes(keywords)) {
-      appliancesResults.push(appliance);
-    }
-  }
-
-  console.log(appliancesResults);
-
-  return appliancesResults;
+  return searchElementsByKeywords(keywords, appliances);
 }
 
-function getUstensilsByKeywords(keywords) {}
+function getUstensilsByKeywords(keywords) {
+  let ustensils = getUstensilsFromRecipes();
+
+  return searchElementsByKeywords(keywords, ustensils);
+}

@@ -19,10 +19,23 @@ function initIngredientSelector() {
   );
 }
 
+function updateIngredientList() {
+  const ingredientList = document.getElementById("ingredients-list");
+  const ingredientInput = document.getElementById("ingredients-input");
+  const ingredientSelector = document.getElementById("ingredients-selector");
+
+  const filteredIngredients = getIngredientsByKeywords(ingredientInput.value);
+
+  updateSelectorList(ingredientList, 1, filteredIngredients);
+  resizeSelector(ingredientSelector, ingredientList, filteredIngredients);
+}
+
 function displayIngredientList() {
   const ingredientList = document.getElementById("ingredients-list");
   const ingredientInput = document.getElementById("ingredients-input");
   const ingredientSelector = document.getElementById("ingredients-selector");
+
+  ingredientInput.oninput = () => updateIngredientList();
 
   displaySelectorList(ingredientList, ingredientInput, ingredientSelector);
 }

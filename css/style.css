@@ -89,6 +89,9 @@ body {
   height: 100%;
   width: 100%;
 }
+.selector__search__input:focus {
+  outline: none;
+}
 .selector__search__icon {
   color: white;
   font-size: 20px;

@@ -10,7 +10,7 @@ function displaySelectorList(
   elementSelectorDOM.style.flexBasis = "60%";
 }
 
-function updateSelectorList(elementListDOM, data) {
+function updateSelectorList(elementListDOM, typeId, data) {
   elementListDOM.innerHTML = "";
 
   for (let element of data) {
@@ -19,6 +19,24 @@ function updateSelectorList(elementListDOM, data) {
     li.textContent = element;
     li.onclick = () => addElementTag(element, typeId);
     elementListDOM.appendChild(li);
+  }
+}
+
+function resizeSelector(elementSelectorDOM, elementListDOM, data) {
+  switch (true) {
+    case data.length < 10:
+      elementSelectorDOM.style.flexBasis = "17%";
+      elementListDOM.style.height = "auto";
+      break;
+
+    case data.length < 20:
+      elementSelectorDOM.style.flexBasis = "40%";
+      elementListDOM.style.height = "300px";
+      break;
+
+    default:
+      elementSelectorDOM.style.flexBasis = "60%";
+      elementListDOM.style.height = "300px";
   }
 }
 
