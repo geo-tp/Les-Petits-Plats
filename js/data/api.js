@@ -1,4 +1,4 @@
-function getIngredientsFromRecipes(limit = 30) {
+function getIngredientsFromRecipes(limit = null) {
   let ingredients = [];
 
   for (let recipe of recipes) {
@@ -18,7 +18,7 @@ function getIngredientsFromRecipes(limit = 30) {
   return ingredients;
 }
 
-function getUstensilsFromRecipes(limit = 30) {
+function getUstensilsFromRecipes(limit = null) {
   let ustensils = [];
 
   for (let recipe of recipes) {
@@ -37,7 +37,7 @@ function getUstensilsFromRecipes(limit = 30) {
   return ustensils;
 }
 
-function getAppliancesFromRecipes(limit = 30) {
+function getAppliancesFromRecipes(limit = null) {
   let appliances = [];
 
   for (let recipe of recipes) {
@@ -56,3 +56,44 @@ function getAppliancesFromRecipes(limit = 30) {
 function getAllRecipes() {
   return recipes;
 }
+
+function getRecipesByTags(tags) {}
+
+function getRecipesByKeywords(keywords) {}
+
+function getIngredientsByKeywords(keywords) {
+  let ingredients = getIngredientsFromRecipes();
+
+  ingredientsFormatted = replaceAccents(removeIneficientWords(keywords));
+
+  let ingredientsResults = [];
+
+  for (let ingredient of ingredients) {
+    if (replaceAccents(ingredient).include(keywords)) {
+      ingredientsResults.push(ingredient);
+    }
+  }
+
+  return ingredientsResults;
+}
+
+function getAppliancesByKeywords(keywords) {
+  let appliances = getAppliancesFromRecipes();
+
+  appliancesFormatted = replaceAccents(removeIneficientWords(keywords));
+
+  let appliancesResults = [];
+
+  for (let appliance of appliances) {
+    console.log(replaceAccents(appliance).includes(keywords));
+    if (replaceAccents(appliance).includes(keywords)) {
+      appliancesResults.push(appliance);
+    }
+  }
+
+  console.log(appliancesResults);
+
+  return appliancesResults;
+}
+
+function getUstensilsByKeywords(keywords) {}

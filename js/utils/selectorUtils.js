@@ -10,6 +10,18 @@ function displaySelectorList(
   elementSelectorDOM.style.flexBasis = "60%";
 }
 
+function updateSelectorList(elementListDOM, data) {
+  elementListDOM.innerHTML = "";
+
+  for (let element of data) {
+    let li = document.createElement("li");
+    li.classList.add("selector__elements__item");
+    li.textContent = element;
+    li.onclick = () => addElementTag(element, typeId);
+    elementListDOM.appendChild(li);
+  }
+}
+
 function closeSelectorList(
   elementListDOM,
   elementInputDOM,
