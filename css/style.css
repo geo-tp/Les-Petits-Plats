@@ -247,6 +247,27 @@ main {
   }
 }
 
+.no-results {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  animation: appear-slowly 500ms linear;
+}
+.no-results h2 {
+  color: #ed6454;
+}
+.no-results i {
+  color: #ed6454;
+}
+.no-results p {
+  font-size: 0.8;
+}
+
 .search {
   margin: 0px 20px;
 }
@@ -256,6 +277,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
+  min-height: 500px;
 }
 
 .selectors {
