@@ -61,4 +61,7 @@
   &--is-open {
     flex-basis: 60%;
   }
+
+  @include mobile-design {
+  }
 }

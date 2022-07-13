@@ -3,6 +3,7 @@
   margin: 20px;
   flex-basis: 30%;
   box-sizing: border-box;
+  animation: appear-slowly 500ms linear;
   &__picture {
     height: 190px;
     background-color: $bg-color4;

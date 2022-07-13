@@ -1,9 +1,13 @@
 html {
-  max-width: $max-resolution;
-  min-width: $min-resolution;
   margin: 0 auto;
 }
 
 body {
   font-family: "Lato", sans-serif;
+}
+
+main {
+  max-width: $max-resolution;
+  min-width: $min-resolution;
+  margin: 0 auto;
 }
