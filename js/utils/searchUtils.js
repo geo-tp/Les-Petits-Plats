@@ -98,3 +98,34 @@ function searchRecipesByTags(tags, dataset) {
 
   return recipesResults;
 }
+
+function searchRecipesByKeywords(keywords, dataset) {
+  if (!keywords) {
+    return dataset;
+  }
+
+  keywordsFormatted = replaceAccents(
+    removeIneficientWords(removeUnusedChar(keywords))
+  );
+
+  let recipesResults = [];
+
+  for (let recipe of dataset) {
+    if (
+      replaceAccents(recipe.name + " " + recipe.description).includes(
+        keywordsFormatted
+      )
+    ) {
+      recipesResults.push(recipe);
+    }
+  }
+
+  return recipesResults;
+}
+
+function searchRecipes(keywords, tags) {
+  let recipesResults = searchRecipesByTags(tags, getAllRecipes());
+  recipesResults = searchRecipesByKeywords(keywords, recipesResults);
+
+  return recipesResults;
+}

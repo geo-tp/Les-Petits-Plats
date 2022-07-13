@@ -13,7 +13,7 @@ function filterRecipes() {
   let tags = getTypeOrderedActiveTags();
   let keywords = getSearchBarValue();
 
-  let filteredRecipes = searchRecipesByTags(tags, getAllRecipes());
+  let filteredRecipes = searchRecipes(keywords, tags);
   console.log("RECIPES", filteredRecipes);
   displayRecipes(filteredRecipes);
 }
