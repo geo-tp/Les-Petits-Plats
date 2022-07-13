@@ -124,7 +124,7 @@ function searchRecipesByKeywords(keywords, dataset) {
 }
 
 function searchRecipes(keywords, tags) {
-  let recipesResults = searchRecipesByTags(tags, getAllRecipes());
+  let recipesResults = searchRecipesByTags(tags, Api.getAllRecipes());
   recipesResults = searchRecipesByKeywords(keywords, recipesResults);
 
   return recipesResults;

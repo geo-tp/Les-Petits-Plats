@@ -2,7 +2,7 @@ function initUstensilSelector() {
   const ustensilSelector = document.getElementById("ustensils-selector");
   const name = "Ustensils";
   const placeholder = "Rechercher un ustensil";
-  const ustensils = getUstensilsFromRecipes(30);
+  const ustensils = Api.getUstensilsFromRecipes(30);
 
   const ustensilSelectorModel = selectorFactory({
     name,
@@ -27,9 +27,9 @@ function filterUstensilList() {
   let newUstensilsList = null;
 
   if (ustensilInput.value == "") {
-    newUstensilsList = getUstensilsFromRecipes(30);
+    newUstensilsList = Api.getUstensilsFromRecipes(30);
   } else {
-    newUstensilsList = getUstensilsByKeywords(ustensilInput.value);
+    newUstensilsList = Api.getUstensilsByKeywords(ustensilInput.value);
   }
 
   filterSelectorList(ustensilList, 3, newUstensilsList);

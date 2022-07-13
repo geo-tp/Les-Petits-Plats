@@ -131,6 +131,7 @@ main {
   list-style: none;
   font-size: 1.1em;
   padding-left: 20px;
+  z-index: 50;
 }
 .selector__elements__item {
   padding: 5px 0px;
@@ -150,6 +151,7 @@ main {
   color: white;
   margin-top: 20px;
   margin-right: 20px;
+  animation: appear-slowly 500ms linear;
 }
 .selected-tag__label {
   margin-left: 5px;
@@ -185,8 +187,8 @@ main {
 }
 .recipe-card {
   box-sizing: border-box;
-  margin: 20px;
-  flex-basis: 30%;
+  flex-basis: 31%;
+  margin: 20px auto;
   box-sizing: border-box;
   animation: appear-slowly 500ms linear;
 }
@@ -236,12 +238,12 @@ main {
 }
 @media screen and (max-width: 1192px) {
   .recipe-card {
-    flex-basis: 45%;
+    flex-basis: 47%;
   }
 }
 @media screen and (max-width: 768px) {
   .recipe-card {
-    flex-basis: 90%;
+    flex-basis: 100%;
   }
 }
 
@@ -250,9 +252,10 @@ main {
 }
 
 .recipes {
+  margin: 0 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .selectors {

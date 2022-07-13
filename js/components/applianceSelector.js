@@ -3,7 +3,7 @@ function initApplianceSelector() {
 
   const name = "Appareils";
   const placeholder = "Rechercher un appareil";
-  const appliances = getAppliancesFromRecipes(30);
+  const appliances = Api.getAppliancesFromRecipes(30);
 
   const applianceSelectorModel = selectorFactory({
     name,
@@ -28,9 +28,9 @@ function filterApplianceList() {
   let newAppliancesList = null;
 
   if (applianceInput.value == "") {
-    newAppliancesList = getAppliancesFromRecipes(30);
+    newAppliancesList = Api.getAppliancesFromRecipes(30);
   } else {
-    newAppliancesList = getAppliancesByKeywords(applianceInput.value);
+    newAppliancesList = Api.getAppliancesByKeywords(applianceInput.value);
   }
 
   filterSelectorList(applianceList, 2, newAppliancesList);

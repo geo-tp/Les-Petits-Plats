@@ -2,7 +2,7 @@ function initIngredientSelector() {
   const ingredientSelector = document.getElementById("ingredients-selector");
   const name = "Ingredients";
   const placeholder = "Rechercher un ingrédient";
-  const ingredients = getIngredientsFromRecipes(30);
+  const ingredients = Api.getIngredientsFromRecipes(30);
 
   const ingredientSelectorModel = selectorFactory({
     name,
@@ -27,9 +27,9 @@ function filterIngredientList() {
   let newIngredientsList = null;
 
   if (ingredientInput.value == "") {
-    newIngredientsList = getIngredientsFromRecipes(30);
+    newIngredientsList = Api.getIngredientsFromRecipes(30);
   } else {
-    newIngredientsList = getIngredientsByKeywords(ingredientInput.value);
+    newIngredientsList = Api.getIngredientsByKeywords(ingredientInput.value);
   }
 
   filterSelectorList(ingredientList, 1, newIngredientsList);

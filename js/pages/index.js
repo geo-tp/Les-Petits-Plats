@@ -3,7 +3,7 @@ function init() {
   initApplianceSelector();
   initUstensilSelector();
   initSearchBar();
-  displayRecipes(getAllRecipes());
+  displayRecipes(Api.getAllRecipes());
   selectorsCloseEvent();
 }
 

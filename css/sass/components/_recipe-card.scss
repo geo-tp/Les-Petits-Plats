@@ -1,7 +1,7 @@
 .recipe-card {
   box-sizing: border-box;
-  margin: 20px;
-  flex-basis: 30%;
+  flex-basis: 31%;
+  margin: 20px auto;
   box-sizing: border-box;
   animation: appear-slowly 500ms linear;
   &__picture {
@@ -60,10 +60,10 @@
   }
 
   @include tablet-design {
-    flex-basis: 45%;
+    flex-basis: 47%;
   }
 
   @include mobile-design {
-    flex-basis: 90%;
+    flex-basis: 100%;
   }
 }

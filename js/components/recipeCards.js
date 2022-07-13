@@ -13,7 +13,7 @@ function filterRecipes() {
   let tags = getTypeOrderedActiveTags();
   let keywords = getSearchBarValue();
 
-  let filteredRecipes = searchRecipes(keywords, tags);
+  let filteredRecipes = Api.getRecipesByTagsAndKeywords(keywords, tags);
   console.log("RECIPES", filteredRecipes);
   displayRecipes(filteredRecipes);
 }
