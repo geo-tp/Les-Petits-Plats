@@ -50,6 +50,7 @@ function closeUstensilList() {
   const ustensilList = document.getElementById("ustensils-list");
   const ustensilInput = document.getElementById("ustensils-input");
   const ustensilSelector = document.getElementById("ustensils-selector");
+
   ustensilInput.setAttribute("value", "Ustensils");
 
   closeSelectorList(ustensilList, ustensilInput, ustensilSelector);

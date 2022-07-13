@@ -57,16 +57,7 @@ function getAllRecipes() {
   return recipes;
 }
 
-function getRecipesByTags(tags) {
-  let ustensils = [];
-  let ingredients = [];
-  let appareils = [];
-
-  for (let tag of tags) {
-    switch (true) {
-    }
-  }
-}
+function getRecipesByTags(tags) {}
 
 function getRecipesByKeywords(keywords) {}
 

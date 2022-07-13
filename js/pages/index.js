@@ -2,7 +2,7 @@ function init() {
   initIngredientSelector();
   initApplianceSelector();
   initUstensilSelector();
-  displayRecipes();
+  displayRecipes(getAllRecipes());
   selectorsCloseEvent();
 }
 

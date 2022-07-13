@@ -1,3 +1,11 @@
+function formatKeywords(keywords) {
+  keywords = removeIneficientWords(keywords);
+  keywords = removeUnusedChar(keywords);
+  keywords = replaceAccents(keywords);
+
+  return keywords;
+}
+
 function replaceAccents(string) {
   return string
     .toLowerCase()
@@ -7,6 +15,11 @@ function replaceAccents(string) {
     .replace(/[ôö]/g, "o")
     .replace(/[ùûû]/g, "u")
     .replace(/[ç]/g, "c");
+}
+
+function removeUnusedChar(string) {
+  stringWithoutSpecialChar = string.replace(/[&\/\\#,+()$~%._'":*?<>{}]/g, "");
+  return stringWithoutSpecialChar.trim();
 }
 
 function removeIneficientWords(string) {

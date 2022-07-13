@@ -4,3 +4,9 @@ function initSearchBar() {
 
   searchInput.oninput = () => filterRecipes();
 }
+
+function getSearchBarValue() {
+  const searchInput = document.querySelector(".search-bar__input");
+
+  return searchInput.value;
+}
