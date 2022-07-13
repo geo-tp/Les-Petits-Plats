@@ -111,11 +111,13 @@ function searchRecipesByKeywords(keywords, dataset) {
   let recipesResults = [];
 
   for (let recipe of dataset) {
-    if (
-      replaceAccents(recipe.name + " " + recipe.description).includes(
-        keywordsFormatted
-      )
-    ) {
+    let recipeInformations = `${recipe.name} ${recipe.description} `;
+    for (let ingredient of recipe.ingredients) {
+      recipeInformations += `${ingredient.ingredient} `;
+    }
+    recipeInformations = replaceAccents(recipeInformations);
+
+    if (recipeInformations.includes(keywordsFormatted)) {
       recipesResults.push(recipe);
     }
   }
