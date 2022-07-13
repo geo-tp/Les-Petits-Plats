@@ -75,9 +75,9 @@ function searchRecipesByUstensilsTags(tags, dataset) {
 function searchRecipesByTags(tags, dataset) {
   let recipesResults = dataset;
 
-  if (tags.ingredients.length) {
-    recipesResults = searchRecipesByIngredientsTags(
-      tags.ingredients,
+  if (tags.appliance) {
+    recipesResults = searchRecipesByApplianceTag(
+      tags.appliance,
       recipesResults
     );
   }
@@ -89,9 +89,9 @@ function searchRecipesByTags(tags, dataset) {
     );
   }
 
-  if (tags.appliance) {
-    recipesResults = searchRecipesByApplianceTag(
-      tags.appliance,
+  if (tags.ingredients.length) {
+    recipesResults = searchRecipesByIngredientsTags(
+      tags.ingredients,
       recipesResults
     );
   }
