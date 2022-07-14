@@ -53,9 +53,10 @@
           >
             <div class="selector__search">
               <input
+                id="ingredients-input"
                 class="selector__search__input"
                 type="text"
-                value=""
+                value="Ingrédients"
                 placeholder="Rechercher un ingredient"
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
@@ -73,6 +74,7 @@
                 class="selector__search__input"
                 type="button"
                 value="Appareils"
+                placeholder="Rechercher un appareil"
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
@@ -88,11 +90,12 @@
                 class="selector__search__input"
                 type="button"
                 value="Ustensils"
+                placeholder="Rechercher un ustensil"
               />
               <i class="selector__search__icon fa fa-angle-down"></i>
             </div>
             <ul
-              class="selector__elements background--color2"
+              class="selector__elements background--color3"
               id="ustensils-list"
             ></ul>
           </div>
@@ -102,12 +105,13 @@
     </main>
     <script src="./js/data/recipes.js"></script>
     <script src="./js/data/api.js"></script>
-    <script src="./js/utils/selectorUtils.js"></script>
+    <script src="./js/utils/eventUtils.js"></script>
     <script src="./js/utils/searchUtils.js"></script>
     <script src="./js/utils/stringUtils.js"></script>
     <script src="./js/factories/selectorFactory.js"></script>
     <script src="./js/factories/tagFactory.js"></script>
     <script src="./js/factories/recipeFactory.js"></script>
+    <script src="./js/managers/selectorManager.js"></script>
     <script src="./js/components/ingredientSelector.js"></script>
     <script src="./js/components/applianceSelector.js"></script>
     <script src="./js/components/ustensilSelector.js"></script>

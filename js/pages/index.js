@@ -1,7 +1,7 @@
 function init() {
-  initIngredientSelector();
-  initApplianceSelector();
-  initUstensilSelector();
+  // initIngredientSelector();
+  // initApplianceSelector();
+  // initUstensilSelector();
   initSearchBar();
   displayRecipes(Api.getAllRecipes());
   selectorsCloseEvent();

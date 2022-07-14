@@ -63,19 +63,19 @@ class Api {
   }
 
   static getIngredientsByKeywords(keywords) {
-    let ingredients = this.getIngredientsFromRecipes();
+    let ingredients = Api.getIngredientsFromRecipes();
 
     return searchElementsByKeywords(keywords, ingredients);
   }
 
   static getAppliancesByKeywords(keywords) {
-    let appliances = this.getAppliancesFromRecipes();
+    let appliances = Api.getAppliancesFromRecipes();
 
     return searchElementsByKeywords(keywords, appliances);
   }
 
   static getUstensilsByKeywords(keywords) {
-    let ustensils = this.getUstensilsFromRecipes();
+    let ustensils = Api.getUstensilsFromRecipes();
 
     return searchElementsByKeywords(keywords, ustensils);
   }

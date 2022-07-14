@@ -1,57 +1,64 @@
-function initUstensilSelector() {
-  const ustensilSelector = document.getElementById("ustensils-selector");
-  const name = "Ustensils";
-  const placeholder = "Rechercher un ustensil";
-  const ustensils = Api.getUstensilsFromRecipes(30);
+const UstensilSelector = new SelectorManager(
+  "Ustensils",
+  3,
+  Api.getUstensilsFromRecipes,
+  Api.getUstensilsByKeywords
+);
 
-  const ustensilSelectorModel = selectorFactory({
-    name,
-    placeholder,
-    elements: ustensils,
-    typeId: 3,
-    onclickEvent: displayUstensilList,
-  });
-  const ustensilSelectorDOM = ustensilSelectorModel.getSelectorDOM();
+// function initUstensilSelector() {
+//   const ustensilSelector = document.getElementById("ustensils-selector");
+//   const name = "Ustensils";
+//   const placeholder = "Rechercher un ustensil";
+//   const ustensils = Api.getUstensilsFromRecipes(30);
 
-  ustensilSelector.parentNode.replaceChild(
-    ustensilSelectorDOM,
-    ustensilSelector
-  );
-}
+//   const ustensilSelectorModel = selectorFactory({
+//     name,
+//     placeholder,
+//     elements: ustensils,
+//     typeId: 3,
+//     onclickEvent: displayUstensilList,
+//   });
+//   const ustensilSelectorDOM = ustensilSelectorModel.getSelectorDOM();
 
-function filterUstensilList() {
-  const ustensilList = document.getElementById("ustensils-list");
-  const ustensilInput = document.getElementById("ustensils-input");
-  const ustensilSelector = document.getElementById("ustensils-selector");
+//   ustensilSelector.parentNode.replaceChild(
+//     ustensilSelectorDOM,
+//     ustensilSelector
+//   );
+// }
 
-  let newUstensilsList = null;
+// function filterUstensilList() {
+//   const ustensilList = document.getElementById("ustensils-list");
+//   const ustensilInput = document.getElementById("ustensils-input");
+//   const ustensilSelector = document.getElementById("ustensils-selector");
 
-  if (ustensilInput.value == "") {
-    newUstensilsList = Api.getUstensilsFromRecipes(30);
-  } else {
-    newUstensilsList = Api.getUstensilsByKeywords(ustensilInput.value);
-  }
+//   let newUstensilsList = null;
 
-  filterSelectorList(ustensilList, 3, newUstensilsList);
-  resizeSelector(ustensilSelector, ustensilList, newUstensilsList);
-}
+//   if (ustensilInput.value == "") {
+//     newUstensilsList = Api.getUstensilsFromRecipes(30);
+//   } else {
+//     newUstensilsList = Api.getUstensilsByKeywords(ustensilInput.value);
+//   }
 
-function displayUstensilList() {
-  const ustensilList = document.getElementById("ustensils-list");
-  const ustensilInput = document.getElementById("ustensils-input");
-  const ustensilSelector = document.getElementById("ustensils-selector");
+//   filterSelectorList(ustensilList, 3, newUstensilsList);
+//   resizeSelector(ustensilSelector, ustensilList, newUstensilsList);
+// }
 
-  ustensilInput.oninput = () => filterUstensilList();
+// function displayUstensilList() {
+//   const ustensilList = document.getElementById("ustensils-list");
+//   const ustensilInput = document.getElementById("ustensils-input");
+//   const ustensilSelector = document.getElementById("ustensils-selector");
 
-  displaySelectorList(ustensilList, ustensilInput, ustensilSelector);
-}
+//   ustensilInput.oninput = () => filterUstensilList();
 
-function closeUstensilList() {
-  const ustensilList = document.getElementById("ustensils-list");
-  const ustensilInput = document.getElementById("ustensils-input");
-  const ustensilSelector = document.getElementById("ustensils-selector");
+//   displaySelectorList(ustensilList, ustensilInput, ustensilSelector);
+// }
 
-  ustensilInput.setAttribute("value", "Ustensils");
+// function closeUstensilList() {
+//   const ustensilList = document.getElementById("ustensils-list");
+//   const ustensilInput = document.getElementById("ustensils-input");
+//   const ustensilSelector = document.getElementById("ustensils-selector");
 
-  closeSelectorList(ustensilList, ustensilInput, ustensilSelector);
-}
+//   ustensilInput.setAttribute("value", "Ustensils");
+
+//   closeSelectorList(ustensilList, ustensilInput, ustensilSelector);
+// }

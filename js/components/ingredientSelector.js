@@ -1,56 +1,63 @@
-function initIngredientSelector() {
-  const ingredientSelector = document.getElementById("ingredients-selector");
-  const name = "Ingredients";
-  const placeholder = "Rechercher un ingrédient";
-  const ingredients = Api.getIngredientsFromRecipes(30);
+const IngredientSelector = new SelectorManager(
+  "Ingredients",
+  1,
+  Api.getIngredientsFromRecipes,
+  Api.getIngredientsByKeywords
+);
 
-  const ingredientSelectorModel = selectorFactory({
-    name,
-    placeholder,
-    elements: ingredients,
-    typeId: 1,
-    onclickEvent: displayIngredientList,
-  });
-  const ingredientSelectorDOM = ingredientSelectorModel.getSelectorDOM();
+// function initIngredientSelector() {
+//   const ingredientSelector = document.getElementById("ingredients-selector");
+//   const name = "Ingredients";
+//   const placeholder = "Rechercher un ingrédient";
+//   const ingredients = Api.getIngredientsFromRecipes(30);
 
-  ingredientSelector.parentNode.replaceChild(
-    ingredientSelectorDOM,
-    ingredientSelector
-  );
-}
+//   const ingredientSelectorModel = selectorFactory({
+//     name,
+//     placeholder,
+//     elements: ingredients,
+//     typeId: 1,
+//     onclickEvent: displayIngredientList,
+//   });
+//   const ingredientSelectorDOM = ingredientSelectorModel.getSelectorDOM();
 
-function filterIngredientList() {
-  const ingredientList = document.getElementById("ingredients-list");
-  const ingredientInput = document.getElementById("ingredients-input");
-  const ingredientSelector = document.getElementById("ingredients-selector");
+//   ingredientSelector.parentNode.replaceChild(
+//     ingredientSelectorDOM,
+//     ingredientSelector
+//   );
+// }
 
-  let newIngredientsList = null;
+// function filterIngredientList() {
+//   const ingredientList = document.getElementById("ingredients-list");
+//   const ingredientInput = document.getElementById("ingredients-input");
+//   const ingredientSelector = document.getElementById("ingredients-selector");
 
-  if (ingredientInput.value == "") {
-    newIngredientsList = Api.getIngredientsFromRecipes(30);
-  } else {
-    newIngredientsList = Api.getIngredientsByKeywords(ingredientInput.value);
-  }
+//   let newIngredientsList = null;
 
-  filterSelectorList(ingredientList, 1, newIngredientsList);
-  resizeSelector(ingredientSelector, ingredientList, newIngredientsList);
-}
+//   if (ingredientInput.value == "") {
+//     newIngredientsList = Api.getIngredientsFromRecipes(30);
+//   } else {
+//     newIngredientsList = Api.getIngredientsByKeywords(ingredientInput.value);
+//   }
 
-function displayIngredientList() {
-  const ingredientList = document.getElementById("ingredients-list");
-  const ingredientInput = document.getElementById("ingredients-input");
-  const ingredientSelector = document.getElementById("ingredients-selector");
+//   filterSelectorList(ingredientList, 1, newIngredientsList);
+//   resizeSelector(ingredientSelector, ingredientList, newIngredientsList);
+// }
 
-  ingredientInput.oninput = () => filterIngredientList();
+// function displayIngredientList() {
+//   const ingredientList = document.getElementById("ingredients-list");
+//   const ingredientInput = document.getElementById("ingredients-input");
+//   const ingredientSelector = document.getElementById("ingredients-selector");
 
-  displaySelectorList(ingredientList, ingredientInput, ingredientSelector);
-}
+//   ingredientInput.oninput = () => filterIngredientList();
 
-function closeIngredientList() {
-  const ingredientList = document.getElementById("ingredients-list");
-  const ingredientInput = document.getElementById("ingredients-input");
-  const ingredientSelector = document.getElementById("ingredients-selector");
-  ingredientInput.setAttribute("value", "Ingrédients");
+//   displaySelectorList(ingredientList, ingredientInput, ingredientSelector);
+// }
 
-  closeSelectorList(ingredientList, ingredientInput, ingredientSelector);
-}
+// function closeIngredientList() {
+//   const ingredientList = document.getElementById("ingredients-list");
+//   const ingredientInput = document.getElementById("ingredients-input");
+//   const ingredientSelector = document.getElementById("ingredients-selector");
+//   ingredientInput.setAttribute("value", "Ingrédients");
+
+//   closeSelectorList(ingredientList, ingredientInput, ingredientSelector);
+// }

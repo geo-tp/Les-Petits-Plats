@@ -1,57 +1,64 @@
-function initApplianceSelector() {
-  const applianceSelector = document.getElementById("appareils-selector");
+const ApplianceSelector = new SelectorManager(
+  "Appareils",
+  2,
+  Api.getAppliancesFromRecipes,
+  Api.getAppliancesByKeywords
+);
 
-  const name = "Appareils";
-  const placeholder = "Rechercher un appareil";
-  const appliances = Api.getAppliancesFromRecipes(30);
+// function initApplianceSelector() {
+//   const applianceSelector = document.getElementById("appareils-selector");
 
-  const applianceSelectorModel = selectorFactory({
-    name,
-    placeholder,
-    elements: appliances,
-    typeId: 2,
-    onclickEvent: displayApplianceList,
-  });
-  const applianceSelectorDOM = applianceSelectorModel.getSelectorDOM();
+//   const name = "Appareils";
+//   const placeholder = "Rechercher un appareil";
+//   const appliances = Api.getAppliancesFromRecipes(30);
 
-  applianceSelector.parentNode.replaceChild(
-    applianceSelectorDOM,
-    applianceSelector
-  );
-}
+//   const applianceSelectorModel = selectorFactory({
+//     name,
+//     placeholder,
+//     elements: appliances,
+//     typeId: 2,
+//     onclickEvent: displayApplianceList,
+//   });
+//   const applianceSelectorDOM = applianceSelectorModel.getSelectorDOM();
 
-function filterApplianceList() {
-  const applianceList = document.getElementById("appareils-list");
-  const applianceInput = document.getElementById("appareils-input");
-  const applianceSelector = document.getElementById("appareils-selector");
+//   applianceSelector.parentNode.replaceChild(
+//     applianceSelectorDOM,
+//     applianceSelector
+//   );
+// }
 
-  let newAppliancesList = null;
+// function filterApplianceList() {
+//   const applianceList = document.getElementById("appareils-list");
+//   const applianceInput = document.getElementById("appareils-input");
+//   const applianceSelector = document.getElementById("appareils-selector");
 
-  if (applianceInput.value == "") {
-    newAppliancesList = Api.getAppliancesFromRecipes(30);
-  } else {
-    newAppliancesList = Api.getAppliancesByKeywords(applianceInput.value);
-  }
+//   let newAppliancesList = null;
 
-  filterSelectorList(applianceList, 2, newAppliancesList);
-  resizeSelector(applianceSelector, applianceList, newAppliancesList);
-}
+//   if (applianceInput.value == "") {
+//     newAppliancesList = Api.getAppliancesFromRecipes(30);
+//   } else {
+//     newAppliancesList = Api.getAppliancesByKeywords(applianceInput.value);
+//   }
 
-function displayApplianceList() {
-  const applianceList = document.getElementById("appareils-list");
-  const applianceInput = document.getElementById("appareils-input");
-  const applianceSelector = document.getElementById("appareils-selector");
+//   filterSelectorList(applianceList, 2, newAppliancesList);
+//   resizeSelector(applianceSelector, applianceList, newAppliancesList);
+// }
 
-  applianceInput.oninput = () => filterApplianceList();
+// function displayApplianceList() {
+//   const applianceList = document.getElementById("appareils-list");
+//   const applianceInput = document.getElementById("appareils-input");
+//   const applianceSelector = document.getElementById("appareils-selector");
 
-  displaySelectorList(applianceList, applianceInput, applianceSelector);
-}
+//   applianceInput.oninput = () => filterApplianceList();
 
-function closeApplianceList() {
-  const applianceList = document.getElementById("appareils-list");
-  const applianceInput = document.getElementById("appareils-input");
-  const applianceSelector = document.getElementById("appareils-selector");
-  applianceInput.value = "Appareils";
+//   displaySelectorList(applianceList, applianceInput, applianceSelector);
+// }
 
-  closeSelectorList(applianceList, applianceInput, applianceSelector);
-}
+// function closeApplianceList() {
+//   const applianceList = document.getElementById("appareils-list");
+//   const applianceInput = document.getElementById("appareils-input");
+//   const applianceSelector = document.getElementById("appareils-selector");
+//   applianceInput.value = "Appareils";
+
+//   closeSelectorList(applianceList, applianceInput, applianceSelector);
+// }
