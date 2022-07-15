@@ -1,8 +1,5 @@
 function selectorsCloseEvent() {
   const body = document.querySelector("body");
-  //   const ingredientInput = document.getElementById("ingredients-input");
-  //   const ustensilInput = document.getElementById("ustensils-input");
-  //   const applianceInput = document.getElementById("appareils-input");
 
   body.onclick = (e) => {
     if (e.target.classList[0] == "selector__elements__item") {
@@ -27,4 +24,10 @@ function selectorsCloseEvent() {
         IngredientSelector.closeList();
     }
   };
+}
+
+function searchBarFilterEvent() {
+  const searchInput = SearchBarContainer.getSearchBarInputDOM();
+  console.log("SEARCH INPUT", searchInput);
+  searchInput.oninput = () => RecipesContainer.filterRecipes();
 }

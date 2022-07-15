@@ -18,7 +18,10 @@ function replaceAccents(string) {
 }
 
 function removeUnusedChar(string) {
-  stringWithoutSpecialChar = string.replace(/[&\/\\#,+()$~%._'":*?<>{}]/g, "");
+  let stringWithoutSpecialChar = string.replace(
+    /[&\/\\#,+()$~%._'":*?<>{}]/g,
+    ""
+  );
   return stringWithoutSpecialChar.trim();
 }
 

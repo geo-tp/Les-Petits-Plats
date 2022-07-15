@@ -62,6 +62,14 @@ class Api {
     return searchRecipes(keywords, tags);
   }
 
+  static getRecipesByTags(tags) {
+    return searchRecipesByTags(tags);
+  }
+
+  static getRecipesByKeywords(keywords) {
+    return searchRecipesByKeywords(keywords);
+  }
+
   static getIngredientsByKeywords(keywords) {
     let ingredients = Api.getIngredientsFromRecipes();
 

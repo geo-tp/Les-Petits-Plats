@@ -83,7 +83,7 @@ class SelectorManager {
       let li = document.createElement("li");
       li.classList.add("selector__elements__item");
       li.textContent = element;
-      li.onclick = () => addElementTag(element, this.typeId);
+      li.onclick = () => TagsContainer.addTag(element, this.typeId);
       this.elementListDOM.appendChild(li);
     }
   };
