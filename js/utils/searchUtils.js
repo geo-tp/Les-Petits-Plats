@@ -1,7 +1,5 @@
 function searchElementsByKeywords(keywords, dataset) {
-  keywordsFormatted = replaceAccents(
-    removeIneficientWords(removeUnusedChar(keywords))
-  );
+  keywordsFormatted = formatKeywords(keywords);
 
   let elementsResults = [];
 
@@ -104,9 +102,7 @@ function searchRecipesByKeywords(keywords, dataset) {
     return dataset;
   }
 
-  keywordsFormatted = replaceAccents(
-    removeIneficientWords(removeUnusedChar(keywords))
-  );
+  keywordsFormatted = formatKeywords(keywords);
 
   let recipesResults = [];
 

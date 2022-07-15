@@ -3,7 +3,7 @@
   flex-basis: 31%;
   margin: 20px auto;
   box-sizing: border-box;
-  animation: appear-slowly 500ms linear;
+  animation: appear-slowly 300ms linear;
   &__picture {
     height: 190px;
     background-color: $bg-color4;
@@ -48,13 +48,16 @@
       }
 
       &__instruction {
+        padding-left: 20px;
         margin: 0;
         flex-basis: 50%;
-        font-size: 0.7em;
-        overflow: hidden;
+        line-height: 1.5;
+        display: -webkit-box;
         text-overflow: ellipsis;
-        // margin-bottom: 10px;
-        height: 110px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 7;
+        overflow: hidden;
+        font-size: 0.7em;
       }
     }
   }

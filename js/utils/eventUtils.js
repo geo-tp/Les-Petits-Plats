@@ -28,6 +28,5 @@ function selectorsCloseEvent() {
 
 function searchBarFilterEvent() {
   const searchInput = SearchBarContainer.getSearchBarInputDOM();
-  console.log("SEARCH INPUT", searchInput);
   searchInput.oninput = () => RecipesContainer.filterRecipes();
 }
