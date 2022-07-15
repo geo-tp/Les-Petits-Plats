@@ -6,6 +6,11 @@ class TagsContainer {
       if (this.activeTags[i].name == name) {
         return;
       }
+
+      if (this.activeTags[i].type == 3 && type == 3) {
+        this.activeTags[i].getTagDOM().remove();
+        this.activeTags.splice(i, 1);
+      }
     }
 
     let tagModel = new TagManager({ name, type });

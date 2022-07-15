@@ -19,6 +19,7 @@ function searchRecipesByIngredientsTags(tags, dataset) {
     let recipeCheckSucceed = true;
     let recipeIngredients = [];
     console.log(recipe);
+
     for (ingredient of recipe.ingredients) {
       console.log(ingredient.ingredient);
       recipeIngredients.push(ingredient.ingredient.toLowerCase());
