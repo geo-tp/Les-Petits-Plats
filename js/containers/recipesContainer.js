@@ -38,7 +38,7 @@ class RecipesContainer {
     let messageWrapper = document.createElement("div");
     messageWrapper.classList.add("no-results");
 
-    icon.classList.add("fa", "fa-search", "fa-3x");
+    icon.classList.add("fa", "fa-search");
     title.textContent = "Aucun résultat";
     message.textContent =
       "Aucune recette n'a été trouvée, essayez d'enlever des tags ou de réduire vos mots clés";

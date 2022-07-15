@@ -27,6 +27,11 @@
     color: $text-color1;
     border: 0;
     cursor: pointer;
+    transition: all 1s linear;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     & i {
       font-size: 20px;

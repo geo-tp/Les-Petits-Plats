@@ -4,19 +4,25 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  max-width: 300px;
+  max-width: 330px;
   padding: 20px;
   border-radius: 10px;
   animation: appear-slowly 500ms linear;
 
   & h2 {
-    color: $bg-color3;
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: $bg-color4;
   }
 
   & i {
-    color: $bg-color3;
+    color: $bg-color4;
+    font-size: 2.5em;
   }
   & p {
-    font-size: 0.8;
+    font-size: 1em;
+    font-weight: bold;
+    color: ($bg-color4);
   }
 }

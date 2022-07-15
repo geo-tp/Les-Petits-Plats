@@ -1,10 +1,3 @@
-const UstensilSelector = new SelectorManager(
-  "Ustensils",
-  3,
-  Api.getUstensilsFromRecipes,
-  Api.getUstensilsByKeywords
-);
-
 const IngredientSelector = new SelectorManager(
   "Ingredients",
   1,
@@ -19,6 +12,14 @@ const ApplianceSelector = new SelectorManager(
   Api.getAppliancesByKeywords
 );
 
+const UstensilSelector = new SelectorManager(
+  "Ustensils",
+  3,
+  Api.getUstensilsFromRecipes,
+  Api.getUstensilsByKeywords
+);
+
 RecipesContainer.displayRecipes(Api.getAllRecipes());
+
 selectorsCloseEvent();
 searchBarFilterEvent();
