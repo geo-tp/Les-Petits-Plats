@@ -57,7 +57,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 40px auto;
+  margin: 40px 20px auto;
   align-items: center;
   text-decoration: none;
 }
@@ -83,6 +83,7 @@ main {
   background-color: #e7e7e7;
   border: 0;
   border-radius: 5px;
+  font-size: 1.2em;
 }
 .search-bar__button {
   padding: 20px;
@@ -94,6 +95,7 @@ main {
   display: flex;
   align-items: center;
   background-color: #e7e7e7;
+  border-radius: 5px;
 }
 
 .selector {
@@ -129,6 +131,11 @@ main {
 .selector__search__icon {
   color: white;
   font-size: 20px;
+  transition: all 200ms;
+}
+.selector__search__icon--reverse {
+  transform: rotate(180deg);
+  transform-origin: center;
 }
 .selector__elements {
   display: flex;
@@ -136,7 +143,7 @@ main {
   width: 100%;
   top: 64px;
   position: absolute;
-  height: 330px;
+  height: 380px;
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 0;
@@ -152,6 +159,7 @@ main {
   padding: 5px 0px;
   text-transform: capitalize;
   cursor: pointer;
+  line-height: 1.5;
 }
 .selector--is-open {
   flex-basis: 60%;

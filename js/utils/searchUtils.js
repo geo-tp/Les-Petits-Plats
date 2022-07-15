@@ -110,6 +110,7 @@ function searchRecipesByKeywords(keywords, dataset) {
     let recipeInformations = `${recipe.name} ${
       recipe.description
     } ${recipe.ingredients.join(" ")} `;
+
     recipeInformations = replaceAccents(recipeInformations);
 
     if (recipeInformations.includes(keywordsFormatted)) {

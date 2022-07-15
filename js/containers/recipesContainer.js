@@ -16,11 +16,9 @@ class RecipesContainer {
   }
 
   static filterRecipes() {
-    console.log("WE FILTER");
     let tags = TagsContainer.getTypeOrderedActiveTags();
     let keywords = SearchBarContainer.getSearchBarValue();
     let filteredRecipes = Api.getRecipesByTagsAndKeywords(keywords, tags);
-    console.log(filteredRecipes);
     this.displayRecipes(filteredRecipes);
   }
 

@@ -32,6 +32,12 @@
     &__icon {
       color: $text-color1;
       font-size: 20px;
+      transition: all 200ms;
+
+      &--reverse {
+        transform: rotate(180deg);
+        transform-origin: center;
+      }
     }
   }
 
@@ -41,7 +47,7 @@
     width: 100%;
     top: 64px;
     position: absolute;
-    height: 330px;
+    height: 380px;
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 0;
@@ -57,6 +63,7 @@
       padding: 5px 0px;
       text-transform: capitalize;
       cursor: pointer;
+      line-height: 1.5;
     }
   }
 

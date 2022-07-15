@@ -11,7 +11,14 @@ class SelectorManager {
     this.elementSelectorDOM = document.getElementById(
       `${name.toLowerCase()}-selector`
     );
-    this.elements = this.getData(30);
+
+    this.elementSelectorAngleDOM = document.getElementById(
+      `${name.toLowerCase()}-angle`
+    );
+
+    this.defaultElements = this.getData(30);
+    this.elements = this.defaultElements;
+
     console.log(this.elements);
 
     this.elementInputDOM.oninput = () => this.filterList();
@@ -31,12 +38,14 @@ class SelectorManager {
   };
 
   displayList = () => {
-    console.log("DISPLAT");
     this.elementInputDOM.type = "text";
     this.elementInputDOM.value = "";
     this.elementInputDOM.focus();
     this.elementListDOM.classList.remove("visibility--hidden");
     this.elementSelectorDOM.style.flexBasis = "60%";
+    this.elementSelectorAngleDOM.classList.add(
+      "selector__search__icon--reverse"
+    );
   };
 
   filterList = () => {
@@ -54,8 +63,15 @@ class SelectorManager {
 
   closeList = () => {
     this.elementInputDOM.type = "button";
+    this.elementInputDOM.value = this.name;
     this.elementListDOM.classList.add("visibility--hidden");
     this.elementSelectorDOM.style.flexBasis = "12%";
+    this.elements = this.defaultElements;
+    this.elementSelectorAngleDOM.classList.remove(
+      "selector__search__icon--reverse"
+    );
+
+    this.updateList();
   };
 
   resizeSelector = () => {
