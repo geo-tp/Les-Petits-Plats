@@ -56,6 +56,7 @@ function searchRecipesByUstensilsTags(tags, dataset) {
   for (let recipe of dataset) {
     recipeCheckSucceed = true;
     unstensilsCapitalized = [];
+
     for (let recipeUstensil of recipe.ustensils) {
       unstensilsCapitalized.push(capitalizeFirstLetter(recipeUstensil));
     }
