@@ -7,7 +7,7 @@ class TagsContainer {
         return;
       }
 
-      if (this.activeTags[i].type == 3 && type == 3) {
+      if (this.activeTags[i].type == 2 && type == 2) {
         this.activeTags[i].getTagDOM().remove();
         this.activeTags.splice(i, 1);
       }

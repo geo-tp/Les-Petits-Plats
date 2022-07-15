@@ -4,7 +4,7 @@ class Api {
 
     for (let recipe of recipes) {
       for (let ingredient of recipe.ingredients) {
-        let ing = ingredient.ingredient.toLowerCase();
+        let ing = capitalizeFirstLetter(ingredient.ingredient);
         if (!ingredients.includes(ing)) {
           // ingredient is an object with quantity
           ingredients.push(ing);
@@ -24,9 +24,10 @@ class Api {
 
     for (let recipe of recipes) {
       for (let ustensil of recipe.ustensils) {
-        if (!ustensils.includes(ustensil)) {
-          // ingredient is an object with quantity
-          ustensils.push(ustensil);
+        let ustensilCapitalized = capitalizeFirstLetter(ustensil);
+        console.log(ustensilCapitalized);
+        if (!ustensils.includes(ustensilCapitalized)) {
+          ustensils.push(ustensilCapitalized);
 
           if (ustensils.length == limit) {
             return ustensils;
@@ -42,8 +43,9 @@ class Api {
     let appliances = [];
 
     for (let recipe of recipes) {
-      if (!appliances.includes(recipe.appliance.toLowerCase())) {
-        appliances.push(recipe.appliance.toLowerCase());
+      let appliance = capitalizeFirstLetter(recipe.appliance);
+      if (!appliances.includes(appliance)) {
+        appliances.push(appliance);
 
         if (appliances.length == limit) {
           return appliances;

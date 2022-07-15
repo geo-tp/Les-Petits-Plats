@@ -1593,7 +1593,7 @@ const recipes = [
     description:
       "Faire bouillir le lait ( on peut y ajouter de l'essence de vanille. Battre les oeufs et le sucre, ajouter la farine puis finalement ajouter le lait chaud. Remettre à feu doux pour faire épaissir en remuant pendant 5 à 10 minutes.",
     appliance: "Casserolle",
-    ustensils: ["fouet", "saladier"],
+    ustensils: ["fouet", "Saladier"],
   },
   {
     id: 46,
