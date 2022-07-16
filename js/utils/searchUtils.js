@@ -117,7 +117,7 @@ function searchRecipesByTags(tags, dataset) {
 }
 
 function searchRecipesByKeywords(keywords, dataset) {
-  if (!keywords) {
+  if (!keywords || keywords.length < 2) {
     return dataset;
   }
 
