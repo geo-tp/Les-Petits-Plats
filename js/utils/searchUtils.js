@@ -19,7 +19,7 @@ function searchRecipesByIngredientsTags(tags, dataset) {
     let recipeCheckSucceed = true;
     let recipeIngredients = [];
 
-    for (ingredient of recipe.ingredients) {
+    for (let ingredient of recipe.ingredients) {
       recipeIngredients.push(capitalizeFirstLetter(ingredient.ingredient));
     }
 
@@ -69,7 +69,7 @@ function searchRecipesByUstensilsTags(tags, dataset) {
 
     for (let ustensil of tags) {
       let flag = true;
-      for (recipeUstensil of ustensilsCapitalized) {
+      for (let recipeUstensil of ustensilsCapitalized) {
         if (recipeUstensil == ustensil) {
           flag = false;
           break;
@@ -146,3 +146,15 @@ function searchRecipes(keywords, tags) {
 
   return recipesResults;
 }
+
+let ingredientsTags = ["Lait de Coco"];
+let ustensilsTags = ["Verres"];
+let applianceTag = "Blender";
+let keywords = "limonade";
+let tags = {
+  ingredients: ingredientsTags,
+  ustensils: ustensilsTags,
+  appliance: applianceTag,
+};
+
+searchRecipes(keywords, tags);
