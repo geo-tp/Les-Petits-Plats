@@ -146,15 +146,3 @@ function searchRecipes(keywords, tags) {
 
   return recipesResults;
 }
-
-let ingredientsTags = ["Lait de Coco"];
-let ustensilsTags = ["Verres"];
-let applianceTag = "Blender";
-let keywords = "limonade";
-let tags = {
-  ingredients: ingredientsTags,
-  ustensils: ustensilsTags,
-  appliance: applianceTag,
-};
-
-searchRecipes(keywords, tags);
