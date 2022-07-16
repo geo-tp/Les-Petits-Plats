@@ -1,135 +1,67 @@
-function searchElementsByKeywords(keywords, dataset) {
-  keywordsFormatted = formatKeywords(keywords);
-
-  let elementsResults = [];
-
-  for (let element of dataset) {
-    if (replaceAccents(element).includes(keywordsFormatted)) {
-      elementsResults.push(element);
-    }
-  }
-
-  return elementsResults;
+function checkTagsMatchUstensils(recipe, tags) {
+  const recipeUstensils = recipe.ustensils.map((ustensil) =>
+    capitalizeFirstLetter(ustensil)
+  );
+  return tags.every((ustensil) => recipeUstensils.includes(ustensil));
 }
 
-function searchRecipesByIngredientsTags(tags, dataset) {
-  let filteredRecipes = [];
-
-  for (let recipe of dataset) {
-    let recipeCheckSucceed = true;
-    let recipeIngredients = [];
-
-    for (ingredient of recipe.ingredients) {
-      recipeIngredients.push(capitalizeFirstLetter(ingredient.ingredient));
-    }
-
-    for (let ingredient of tags) {
-      if (recipeIngredients.indexOf(ingredient) == -1) {
-        recipeCheckSucceed = false;
-        break;
-      }
-    }
-
-    if (recipeCheckSucceed) {
-      filteredRecipes.push(recipe);
-    }
-  }
-
-  return filteredRecipes;
+function checkTagsMatchIngredients(recipe, tags) {
+  const recipeIngredients = recipe.ingredients.map((ingredient) =>
+    capitalizeFirstLetter(ingredient.ingredient)
+  );
+  return tags.every((ingredient) => recipeIngredients.includes(ingredient));
 }
 
-function searchRecipesByApplianceTag(tag, dataset) {
-  let filteredRecipes = [];
-  for (let recipe of dataset) {
-    if (recipe.appliance == tag) {
-      filteredRecipes.push(recipe);
-    }
-  }
+function checkTagMatchAppliance(recipe, tag) {
+  return capitalizeFirstLetter(recipe.appliance) == tag;
+}
+function searchRecipeByTags(tags) {
+  let recipes = Api.getAllRecipes();
 
-  return filteredRecipes;
+  recipesResults = recipes.filter((recipe) => tags.forEach());
 }
 
-function searchRecipesByUstensilsTags(tags, dataset) {
-  let recipeCheckSucceed = true;
-  let filteredRecipes = [];
+// let recipe = {
+//   id: 4,
+//   name: "Salade de riz",
+//   servings: 4,
+//   ingredients: [
+//     {
+//       ingredient: "Riz blanc",
+//       quantity: 500,
+//       unit: "grammes",
+//     },
+//     {
+//       ingredient: "Thon en miettes",
+//       quantity: 200,
+//       unit: "grammes",
+//     },
+//     {
+//       ingredient: "Tomate",
+//       quantity: 2,
+//     },
+//     {
+//       ingredient: "Oeuf dur",
+//       quantity: 2,
+//     },
+//     {
+//       ingredient: "Maïs",
+//       quantity: 300,
+//       unit: "grammes",
+//     },
+//     {
+//       ingredient: "Vinaigrette",
+//       quantity: 5,
+//       unit: "cl",
+//     },
+//   ],
+//   time: 50,
+//   description:
+//     "Faire cuire le riz. Une fois le riz cuit, le laisser refroidir. Couper les oeufs dur en quarts ou en lamelle au choix, coupez le tomates en dés, ajouter au riz les oeufs, les tomates, le poisson, le maïs et la vinaigrette. Ajouter au gout de chacun des corniches, olives etc..",
+//   appliance: "cuiseur de riz",
+//   ustensils: ["saladier", "passoire", "Cuillère à soupe", "Verres"],
+// };
 
-  for (let recipe of dataset) {
-    recipeCheckSucceed = true;
-    unstensilsCapitalized = [];
-
-    for (let recipeUstensil of recipe.ustensils) {
-      unstensilsCapitalized.push(capitalizeFirstLetter(recipeUstensil));
-    }
-
-    for (let ustensil of tags) {
-      if (unstensilsCapitalized.indexOf(ustensil) == -1) {
-        recipeCheckSucceed = false;
-        break;
-      }
-    }
-
-    if (recipeCheckSucceed) {
-      filteredRecipes.push(recipe);
-    }
-  }
-
-  return filteredRecipes;
-}
-
-function searchRecipesByTags(tags, dataset) {
-  let recipesResults = dataset;
-
-  if (tags.appliance) {
-    recipesResults = searchRecipesByApplianceTag(
-      tags.appliance,
-      recipesResults
-    );
-  }
-
-  if (tags.ustensils.length) {
-    recipesResults = searchRecipesByUstensilsTags(
-      tags.ustensils,
-      recipesResults
-    );
-  }
-
-  if (tags.ingredients.length) {
-    recipesResults = searchRecipesByIngredientsTags(
-      tags.ingredients,
-      recipesResults
-    );
-  }
-
-  return recipesResults;
-}
-
-function searchRecipesByKeywords(keywords, dataset) {
-  if (!keywords) {
-    return dataset;
-  }
-
-  keywordsFormatted = formatKeywords(keywords);
-
-  let recipesResults = [];
-
-  for (let recipe of dataset) {
-    let recipeInformations = `${recipe.name} ${
-      recipe.description
-    } ${recipe.ingredients.join(" ")} `;
-
-    recipeInformations = replaceAccents(recipeInformations);
-
-    if (recipeInformations.includes(keywordsFormatted)) {
-      recipesResults.push(recipe);
-    }
-  }
-
-  return recipesResults;
-}
-
-function searchRecipes(keywords, tags) {
-  let recipesResults = searchRecipesByTags(tags, Api.getAllRecipes());
-  recipesResults = searchRecipesByKeywords(keywords, recipesResults);
-
-  return recipesResults;
-}
+// let ingredientsTags = ["Riz blanc", "Tomate"];
+// let ustensilsTags = ["Cuillère à soupe", "Verres"];
+// let applianceTag = "Cuiseur de riz";
