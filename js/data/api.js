@@ -1,13 +1,15 @@
 class Api {
   static getIngredientsFromRecipes(limit = null) {
     let ingredients = [];
+    let ingredientsWithoutAccents = [];
 
     for (let recipe of recipes) {
       for (let ingredient of recipe.ingredients) {
-        let ing = capitalizeFirstLetter(ingredient.ingredient);
-        if (!ingredients.includes(ing)) {
+        let ing = capitalizeFirstLetter(replaceAccents(ingredient.ingredient));
+        if (!ingredientsWithoutAccents.includes(ing)) {
           // ingredient is an object with quantity
-          ingredients.push(ing);
+          ingredients.push(capitalizeFirstLetter(ingredient.ingredient));
+          ingredientsWithoutAccents.push(ing);
 
           if (ingredients.length == limit) {
             return ingredients;
