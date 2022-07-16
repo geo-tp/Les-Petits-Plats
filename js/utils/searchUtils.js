@@ -99,14 +99,14 @@ function searchRecipesByTags(tags, dataset) {
     );
   }
 
-  if (tags.ustensils.length) {
+  if (tags.ustensils.length && recipesResults.length) {
     recipesResults = searchRecipesByUstensilsTags(
       tags.ustensils,
       recipesResults
     );
   }
 
-  if (tags.ingredients.length) {
+  if (tags.ingredients.length && recipesResults.length) {
     recipesResults = searchRecipesByIngredientsTags(
       tags.ingredients,
       recipesResults
