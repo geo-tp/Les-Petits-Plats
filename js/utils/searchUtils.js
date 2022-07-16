@@ -23,8 +23,15 @@ function searchRecipesByIngredientsTags(tags, dataset) {
       recipeIngredients.push(capitalizeFirstLetter(ingredient.ingredient));
     }
 
-    for (let ingredient of tags) {
-      if (recipeIngredients.indexOf(ingredient) == -1) {
+    for (let tagIngredient of tags) {
+      let flag = true;
+      for (let recipeIngredient of recipeIngredients) {
+        if (recipeIngredient == tagIngredient) {
+          flag = false;
+          break;
+        }
+      }
+      if (flag) {
         recipeCheckSucceed = false;
         break;
       }
@@ -50,19 +57,25 @@ function searchRecipesByApplianceTag(tag, dataset) {
 }
 
 function searchRecipesByUstensilsTags(tags, dataset) {
-  let recipeCheckSucceed = true;
   let filteredRecipes = [];
 
   for (let recipe of dataset) {
+    let ustensilsCapitalized = [];
     recipeCheckSucceed = true;
-    unstensilsCapitalized = [];
 
     for (let recipeUstensil of recipe.ustensils) {
-      unstensilsCapitalized.push(capitalizeFirstLetter(recipeUstensil));
+      ustensilsCapitalized.push(capitalizeFirstLetter(recipeUstensil));
     }
 
     for (let ustensil of tags) {
-      if (unstensilsCapitalized.indexOf(ustensil) == -1) {
+      let flag = true;
+      for (recipeUstensil of ustensilsCapitalized) {
+        if (recipeUstensil == ustensil) {
+          flag = false;
+          break;
+        }
+      }
+      if (flag) {
         recipeCheckSucceed = false;
         break;
       }
