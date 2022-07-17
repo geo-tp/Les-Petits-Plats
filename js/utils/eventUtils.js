@@ -1,3 +1,4 @@
+// Event for closing active selector when user click on body or on another selector
 function selectorsCloseEvent() {
   const body = document.querySelector("body");
 
@@ -26,6 +27,7 @@ function selectorsCloseEvent() {
   };
 }
 
+// Trigger recipes filtering when user type chars in search bar
 function searchBarFilterEvent() {
   const searchInput = SearchBarContainer.getSearchBarInputDOM();
   searchInput.oninput = () => RecipesContainer.filterRecipes();

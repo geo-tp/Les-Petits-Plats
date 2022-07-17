@@ -1,3 +1,4 @@
+// Manage recipe object
 class RecipeManager {
   constructor(recipe) {
     const {
@@ -20,6 +21,7 @@ class RecipeManager {
     this.recipeDOM = null;
   }
 
+  // Return recipe DOM element
   getRecipeDOM() {
     if (this.recipeDOM) {
       return this.recipeDOM;

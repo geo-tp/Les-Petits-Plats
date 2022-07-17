@@ -1,12 +1,14 @@
+// Containers for user's selected tags
 class TagsContainer {
   static activeTags = [];
 
   static addTag(name, type) {
+    // tag is already present, return
     for (let i = 0; i < this.activeTags.length; i++) {
       if (this.activeTags[i].name == name) {
         return;
       }
-
+      // New tag is type appliance, we delete last appliance (one appliance tag only)
       if (this.activeTags[i].type == 2 && type == 2) {
         this.activeTags[i].getTagDOM().remove();
         this.activeTags.splice(i, 1);
@@ -27,7 +29,6 @@ class TagsContainer {
 
   static removeTag(tagName) {
     for (let i = 0; i < this.activeTags.length; i++) {
-      console.log(this.activeTags[i].name);
       if (this.activeTags[i].name == tagName) {
         this.activeTags[i].getTagDOM().remove();
         this.activeTags.splice(i, 1);

@@ -1,7 +1,9 @@
+// Containers for recipes results
 class RecipesContainer {
   static recipesDOM = document.getElementById("recipes");
   static recipes = [];
 
+  // display recipes in DOM container
   static displayRecipes(recipes) {
     this.recipesDOM.innerHTML = "";
 
@@ -14,7 +16,7 @@ class RecipesContainer {
       this.addRecipe(recipe);
     }
   }
-
+  // Filter recipes and update view
   static filterRecipes() {
     let tags = TagsContainer.getTypeOrderedActiveTags();
     let keywords = SearchBarContainer.getSearchBarValue();

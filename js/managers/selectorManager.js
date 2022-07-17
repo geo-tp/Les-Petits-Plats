@@ -1,3 +1,4 @@
+// Manage elements selector (ingredients, ustensils, appliance)
 class SelectorManager {
   constructor(name, typeId, getData, getDataByKeywords) {
     this.name = name;
@@ -19,8 +20,6 @@ class SelectorManager {
     this.defaultElements = this.getData(30);
     this.elements = this.defaultElements;
 
-    console.log(this.elements);
-
     this.elementInputDOM.oninput = () => this.filterList();
     this.elementSelectorDOM.onclick = () => this.displayList();
 
@@ -37,6 +36,7 @@ class SelectorManager {
     return this.elementInputDOM.id;
   };
 
+  // Display elements list in DOM container
   displayList = () => {
     this.elementInputDOM.type = "text";
     this.elementInputDOM.value = "";
@@ -48,6 +48,7 @@ class SelectorManager {
     );
   };
 
+  // filter elements list, update view and resize selector
   filterList = () => {
     let newList = null;
 

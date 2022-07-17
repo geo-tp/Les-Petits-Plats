@@ -22,13 +22,18 @@
     ></script>
   </head>
   <body>
+    <!-- HEADER -->
     <header class="header">
       <a href="index.html" aria-label="Retour à la page d'accueil" class="logo">
         <img src="./images/logo/logo-main.png" alt="Logo Les petits plats" />
         <h1>Les petits plats</h1>
       </a>
     </header>
+    <!-- END HEADER -->
+
+    <!-- MAIN -->
     <main id="main" class="main">
+      <!-- SEARCH -->
       <section class="search">
         <div class="search-bar">
           <label class="visibility--hidden" for="searchbar">Rechercher</label>
@@ -44,9 +49,13 @@
           </button>
         </div>
       </section>
+      <!-- END SEARCH -->
+
+      <!-- FILTERS -->
       <section class="filters">
         <div class="tags"></div>
 
+        <!-- SELECTORS -->
         <div class="selectors">
           <div
             id="ingredients-selector"
@@ -111,9 +120,15 @@
             ></ul>
           </div>
         </div>
+        <!-- END SELECTORS -->
       </section>
+      <!-- END FILTERS -->
+
+      <!-- RECIPES -->
       <section class="recipes" id="recipes"></section>
+      <!-- END RECIPES -->
     </main>
+    <!-- END MAIN -->
     <script src="./js/data/recipes.js"></script>
     <script src="./js/data/api.js"></script>
     <script src="./js/utils/eventUtils.js"></script>

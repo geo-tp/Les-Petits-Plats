@@ -1,3 +1,4 @@
+// Containers for search bar input
 class SearchBarContainer {
   static searchBar = document.querySelector(".search-bar");
   static searchInput = document.querySelector(".search-bar__input");

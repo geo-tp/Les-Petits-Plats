@@ -1,3 +1,4 @@
+// Used to simulate API behaviour for recipes.js content
 class Api {
   static getIngredientsFromRecipes(limit = null) {
     let ingredients = [];
@@ -7,7 +8,7 @@ class Api {
       for (let ingredient of recipe.ingredients) {
         let ing = capitalizeFirstLetter(replaceAccents(ingredient.ingredient));
         if (!ingredientsWithoutAccents.includes(ing)) {
-          // ingredient is an object with quantity
+          // ingredient is an object {ingredient:... , quantity:..., unit:...}
           ingredients.push(capitalizeFirstLetter(ingredient.ingredient));
           ingredientsWithoutAccents.push(ing);
 
@@ -27,7 +28,6 @@ class Api {
     for (let recipe of recipes) {
       for (let ustensil of recipe.ustensils) {
         let ustensilCapitalized = capitalizeFirstLetter(ustensil);
-        console.log(ustensilCapitalized);
         if (!ustensils.includes(ustensilCapitalized)) {
           ustensils.push(ustensilCapitalized);
 
