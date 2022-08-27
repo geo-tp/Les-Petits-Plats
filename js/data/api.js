@@ -1,6 +1,11 @@
 // Used to simulate API behaviour for recipes.js content
 class Api {
-  static getIngredientsFromRecipes(limit = null) {
+  static getIngredientsFromRecipes(recipes, limit = null) {
+
+    if (!recipes) {
+      recipes = Api.getAllRecipes()
+    }
+
     let ingredients = [];
     let ingredientsWithoutAccents = [];
 
@@ -22,7 +27,12 @@ class Api {
     return ingredients;
   }
 
-  static getUstensilsFromRecipes(limit = null) {
+  static getUstensilsFromRecipes(recipes, limit = null) {
+
+    if (!recipes) {
+      recipes = Api.getAllRecipes()
+    }
+
     let ustensils = [];
 
     for (let recipe of recipes) {
@@ -41,7 +51,12 @@ class Api {
     return ustensils;
   }
 
-  static getAppliancesFromRecipes(limit = null) {
+  static getAppliancesFromRecipes(recipes, limit = null) {
+
+    if (!recipes) {
+      recipes = Api.getAllRecipes()
+    }
+
     let appliances = [];
 
     for (let recipe of recipes) {
@@ -74,21 +89,15 @@ class Api {
     return searchRecipesByKeywords(keywords);
   }
 
-  static getIngredientsByKeywords(keywords) {
-    let ingredients = Api.getIngredientsFromRecipes();
-
+  static getIngredientsByKeywords(keywords, ingredients) {
     return searchElementsByKeywords(keywords, ingredients);
   }
 
-  static getAppliancesByKeywords(keywords) {
-    let appliances = Api.getAppliancesFromRecipes();
-
+  static getAppliancesByKeywords(keywords, appliances) {
     return searchElementsByKeywords(keywords, appliances);
   }
 
-  static getUstensilsByKeywords(keywords) {
-    let ustensils = Api.getUstensilsFromRecipes();
-
+  static getUstensilsByKeywords(keywords, ustensils) {
     return searchElementsByKeywords(keywords, ustensils);
   }
 }

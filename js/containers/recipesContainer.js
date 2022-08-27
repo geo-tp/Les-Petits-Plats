@@ -6,6 +6,7 @@ class RecipesContainer {
   // display recipes in DOM container
   static displayRecipes(recipes) {
     this.recipesDOM.innerHTML = "";
+    this.recipes = []
 
     if (!recipes.length) {
       this.displayNoResults();
@@ -18,8 +19,10 @@ class RecipesContainer {
   }
   // Filter recipes and update view
   static filterRecipes() {
+
     let tags = TagsContainer.getTypeOrderedActiveTags();
     let keywords = SearchBarContainer.getSearchBarValue();
+
     let filteredRecipes = Api.getRecipesByTagsAndKeywords(keywords, tags);
     this.displayRecipes(filteredRecipes);
   }
@@ -27,7 +30,7 @@ class RecipesContainer {
   static addRecipe(recipe) {
     const recipeModel = new RecipeManager(recipe);
     this.recipesDOM.appendChild(recipeModel.getRecipeDOM());
-    this.recipes.push(recipes);
+    this.recipes.push(recipe);
   }
 
   static displayNoResults() {

@@ -17,7 +17,7 @@ class SelectorManager {
       `${name.toLowerCase()}-angle`
     );
 
-    this.defaultElements = this.getData(30);
+    this.defaultElements = this.getData(null, 30);
     this.elements = this.defaultElements;
 
     this.elementInputDOM.oninput = () => this.filterList();
@@ -46,20 +46,22 @@ class SelectorManager {
     this.elementSelectorAngleDOM.classList.add(
       "selector__search__icon--reverse"
     );
+
   };
 
   // filter elements list, update view and resize selector
   filterList = () => {
-    let newList = null;
-
-    if (this.elementInputDOM.value == "") {
-      newList = this.getData(30);
-    } else {
-      newList = this.getDataByKeywords(this.elementInputDOM.value);
+    let newList = this.getData(RecipesContainer.recipes, 30)
+    if (this.elementInputDOM.value != this.name ) {
+      newList = this.getDataByKeywords(this.elementInputDOM.value, newList);
     }
     this.elements = newList;
     this.updateList();
-    this.resizeSelector();
+    this.resizeSelector()
+
+    if (this.elementInputDOM.value == this.name) {
+      this.closeList();
+    }
   };
 
   closeList = () => {
@@ -67,7 +69,6 @@ class SelectorManager {
     this.elementInputDOM.value = this.name;
     this.elementListDOM.classList.add("visibility--hidden");
     this.elementSelectorDOM.style.flexBasis = "12%";
-    this.elements = this.defaultElements;
     this.elementSelectorAngleDOM.classList.remove(
       "selector__search__icon--reverse"
     );

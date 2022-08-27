@@ -30,5 +30,10 @@ function selectorsCloseEvent() {
 // Trigger recipes filtering when user type chars in search bar
 function searchBarFilterEvent() {
   const searchInput = SearchBarContainer.getSearchBarInputDOM();
-  searchInput.oninput = () => RecipesContainer.filterRecipes();
+  searchInput.oninput = () => {
+    RecipesContainer.filterRecipes()
+    ApplianceSelector.filterList()
+    UstensilSelector.filterList()
+    IngredientSelector.filterList()
+  };
 }
