@@ -40,6 +40,7 @@ class SelectorManager {
   displayList = () => {
     this.elementInputDOM.type = "text";
     this.elementInputDOM.value = "";
+    this.filterList()
     this.elementInputDOM.focus();
     this.elementListDOM.classList.remove("visibility--hidden");
     this.elementSelectorDOM.style.flexBasis = "60%";
@@ -96,7 +97,7 @@ class SelectorManager {
 
   updateList = () => {
     this.elementListDOM.innerHTML = "";
-
+    console.log(this.elements)
     for (let element of this.elements) {
       let li = document.createElement("li");
       li.classList.add("selector__elements__item");
