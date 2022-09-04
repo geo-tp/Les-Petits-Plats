@@ -175,6 +175,12 @@ main {
     flex-wrap: nowrap;
     overflow-y: scroll;
   }
+  .selector__elements__item {
+    white-space: nowrap;
+    overflow-x: unset;
+    text-overflow: ellipsis;
+    margin-left: 20px;
+  }
 }
 
 .selected-tag {
