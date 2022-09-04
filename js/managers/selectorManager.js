@@ -47,6 +47,7 @@ class SelectorManager {
     this.elementSelectorAngleDOM.classList.add(
       "selector__search__icon--reverse"
     );
+    this.resizeSelector()
 
   };
 
