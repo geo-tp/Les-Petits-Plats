@@ -165,7 +165,7 @@ main {
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  margin-left: 15px;
+  margin-left: 20px;
 }
 .selector--is-open {
   flex-basis: 60%;
