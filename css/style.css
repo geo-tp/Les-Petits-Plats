@@ -139,6 +139,7 @@ main {
 }
 .selector__elements {
   display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   width: 100%;
   top: 64px;
@@ -152,13 +153,19 @@ main {
   font-size: 1.1em;
   padding-left: 20px;
   z-index: 50;
-  overflow-y: hidden;
   border-radius: 5px;
+  overflow-y: scroll;
+  padding-right: 20px;
 }
 .selector__elements__item {
   padding: 5px 0px;
   cursor: pointer;
   line-height: 1.5;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  margin-left: 15px;
 }
 .selector--is-open {
   flex-basis: 60%;

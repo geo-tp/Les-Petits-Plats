@@ -52,7 +52,7 @@ class SelectorManager {
 
   // filter elements list, update view and resize selector
   filterList = () => {
-    let newList = this.getData(RecipesContainer.recipes, 30)
+    let newList = this.getData(RecipesContainer.recipes)
     if (this.elementInputDOM.value != this.name ) {
       newList = this.getDataByKeywords(this.elementInputDOM.value, newList);
     }
