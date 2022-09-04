@@ -34,7 +34,7 @@
     <!-- MAIN -->
     <main id="main" class="main">
       <!-- SEARCH -->
-      <section class="search">
+      <div class="search">
         <div class="search-bar">
           <label class="visibility--hidden" for="searchbar">Rechercher</label>
           <input
@@ -48,11 +48,11 @@
             <i class="fas fa-search"></i>
           </button>
         </div>
-      </section>
+      </div>
       <!-- END SEARCH -->
 
       <!-- FILTERS -->
-      <section class="filters">
+      <div class="filters">
         <div class="tags"></div>
 
         <!-- SELECTORS -->
@@ -60,7 +60,6 @@
           <div
             id="ingredients-selector"
             class="selector selector--is-open background--color1"
-            is-open="true"
           >
             <div class="selector__search">
               <input
@@ -86,7 +85,7 @@
               <input
                 id="appareils-input"
                 class="selector__search__input"
-                type="button"
+                type="text"
                 value="Appareils"
                 placeholder="Rechercher un appareil"
               />
@@ -105,7 +104,7 @@
               <input
                 id="ustensils-input"
                 class="selector__search__input"
-                type="button"
+                type="text"
                 value="Ustensils"
                 placeholder="Rechercher un ustensil"
               />
@@ -121,11 +120,11 @@
           </div>
         </div>
         <!-- END SELECTORS -->
-      </section>
+      </div>
       <!-- END FILTERS -->
 
       <!-- RECIPES -->
-      <section class="recipes" id="recipes"></section>
+      <div class="recipes" id="recipes"></div>
       <!-- END RECIPES -->
     </main>
     <!-- END MAIN -->
